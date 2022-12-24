@@ -34,9 +34,16 @@ body, html {
 }
 #logo img
 {
-    height: 100px;
-    width: 100px;
+    margin-top: 80px;
+    margin-left: 510px;
+    height: 200px;
+    width: 200px;
+    position: relative;
 }
+.bg-scroll
+{
+    background-attachment: scroll;
+}  
 /*navbar*/
 #navbar
 {
@@ -48,8 +55,9 @@ body, html {
     background: none;
     display: grid;
     place-items: center stretch;
+    transition: 0.5s;
 }
-#navbar ul #section
+#navbar ul #section 
 {
     list-style: none;
     display: flex;
@@ -58,7 +66,7 @@ body, html {
     /* border: solid; */
     
 }
-#navbar ul #section li
+#navbar ul #section li 
 {
     font-size: 20px;
     margin-left: 10px;
