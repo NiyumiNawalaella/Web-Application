@@ -55,7 +55,7 @@ body, html {
     background: none;
     display: grid;
     place-items: center stretch;
-    transition: 0.5s;
+    transition: 0.9s;
 }
 #navbar ul #section 
 {
@@ -114,6 +114,13 @@ body, html {
     margin-block-start: 80px;
     
 
+}
+/* start_now btn*/
+#start_now
+{
+    text-align: center;
+    box-sizing: content-box;
+    border: solid;
 }
 /*footer*/
 .footer
