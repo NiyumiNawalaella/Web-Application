@@ -40,6 +40,17 @@ body, html {
     width: 200px;
     position: relative;
 }
+#container #home_logo 
+{
+    left: 8%;
+    top: 30px;
+    font-size: 30px;
+    z-index: 997;
+    font-weight: bold;
+    height: 80px;
+    width: 80px;
+}
+
 .bg-scroll
 {
     background-attachment: scroll;
@@ -56,6 +67,7 @@ body, html {
     display: grid;
     place-items: center stretch;
     transition: 0.9s;
+    
 }
 #navbar ul #section 
 {
@@ -69,18 +81,19 @@ body, html {
 #navbar ul #section li 
 {
     font-size: 20px;
-    margin-left: 10px;
+    margin-left: 20px;
     text-align: center;
     width: 180px;
     /* border: solid; */
     padding: 10px;
 }
-#navbar ul li a
+#navbar ul li .border a
 {
     text-decoration: none;
     color: white;
+    
 }
-#navbar ul #section li a:hover
+#navbar ul #section li .border a:hover 
 { 
     box-sizing: border-box;
     border: 2px solid #160aab; /*white and tranparent*/
