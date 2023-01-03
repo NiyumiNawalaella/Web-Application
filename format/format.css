@@ -23,7 +23,7 @@ body, html {
     background: #e9e9eb;
 }
 /*logo*/
-#container #logo
+/*#container #logo
 {
     left: 8%;
     top: 30px;
@@ -39,7 +39,7 @@ body, html {
     height: 200px;
     width: 200px;
     position: relative;
-}
+}*/
 #container #home_logo 
 {
     left: 8%;
@@ -128,7 +128,7 @@ body, html {
 
 }
 /* start_now btn*/
-#start_now
+/*#start_now
 {
     text-align: center;
     box-sizing: content-box;
