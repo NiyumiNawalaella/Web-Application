@@ -1,3 +1,11 @@
+/*body*/
+body
+{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 /*logo*/
 #container #logo
 {
@@ -22,9 +30,52 @@
 
 }
 /* start_now btn*/
-#start_now
+#start_now 
 {
     text-align: center;
     box-sizing: content-box;
     border: solid;
+    padding: 10px;
+}
+#start_now ul li 
+{
+    list-style: none;
+    border: solid;
+    width: auto;
+    margin-left: -40px;
+    height: 210px;
+}
+#start_now:hover
+{
+    box-shadow: 0 0 50px #ccc;
+}
+#start_now ul li p
+{
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+#start_now #btnstart_now
+{
+    height: 45px;
+    width: 170px;
+    position: absolute;
+    top: 580px;
+    left: 610px;
+    display: grid;
+    place-items: center;
+    background: #160aab;
+    border-radius: 10px 20px;
+    padding: 10px;
+}
+#start_now #btnstart_now a
+{
+    color: #e9e9eb;
+    font-size: 20px;
+    list-style: none;
+    text-decoration: none;
+}
+#start_now #btnstart_now:hover
+{
+    background-color: black;   
 }
