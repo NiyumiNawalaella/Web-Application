@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--CSS Link-->
-        <link rel="stylesheet" type="text/css" href="home.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-  
-        <!-- JS Link -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://kit.fontawesome.com/058ca5f5b1.js" crossorigin="anonymous"></script>
-        <script src="home.js"></script>
-    </head>
-    <body>
-        <div id="logo">
-            <p><a href="#"><img src="C:\Web-Application\images\logo.png"></a></p>
-        </div>
-        <section id="home">
+
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS Link-->
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- JS Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/058ca5f5b1.js" crossorigin="anonymous"></script>
+    <script src="home.js"></script>
+</head>
+
+<body>
+    <div id="logo">
+        <p><a href="#"><img src="C:\Web-Application\images\logo.png"></a></p>
+    </div>
+    <section id="home">
         <div id="content">
             <div class="gallery">
                 <div class="gallery_heading">
@@ -56,45 +58,102 @@
             <h3>Testimonial</h3>
         </div>
         <section id="testimonial">
-            <div class="swiper mySwiper">
+            <div class="swiper-container">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div>
+                    <div class="swiper-slide">
+                        <div class="testimonialBox">
+                            <img src="user/quote.png" class="quote">
+                            <div class="comment">
+                                <p>jfijeijfdj cjdincdncdnc dnc idncidci dc nvjvnjnidnci hcdcjjdncindicndc cdncn
+                                    cnkdknconoidncodnconodicnodncodncod cnkdknconoidncodnconodicnodncodncodcoidncndo
+                                    djnckdnocd
+                                    cndoincdicnodifvno odic uf vu dc d ccc
+                                </p>
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <img src="user/1.jpg">
+                                    </div>
+
+                                    <h3>By<br><span>---Name---</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonialBox">
+                            <img src="user/quote.png" class="quote">
+                            <div class="comment">
+                                <p>jfijeijfdj cjdincdncdnc dnc idncidci dc nvjvnjnidnci hcdcjjdncindicndc cdncn
+                                    cnkdknconoidncodnconodicnodncodncod cnkdknconoidncodnconodicnodncodncodcoidncndo
+                                    djnckdnocd
+                                    cndoincdicnodifvno odic uf vu dc d ccc
+                                </p>
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <img src="user/2.png">
+                                    </div>
+                                    <h3>By<br><span>---Name---</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonialBox">
+                            <img src="user/quote.png" class="quote">
+                            <div class="comment">
+                                <p>jfijeijfdj cjdincdncdnc dnc idncidci dc nvjvnjnidnci hcdcjjdncindicndc cdncn
+                                    cnkdknconoidncodnconodicnodncodncod cnkdknconoidncodnconodicnodncodncodcoidncndo
+                                    djnckdnocd
+                                    cndoincdicnodifvno odic uf vu dc d ccc
+                                </p>
+                                <div class="details">
+                                    <div class="imgBx">
+                                        <img src="user/3.jpg">
+                                    </div>
+                                    <h3>By<br><span>---Name---</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
-              </div>
-              <!-- Swiper JS -->
-              <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-          
-              <!-- Initialize Swiper -->
-              <script>
-                var swiper = new Swiper(".mySwiper", {
-                  effect: "coverflow",
-                  grabCursor: true,
-                  centeredSlides: true,
-                  slidesPerView: "auto",
-                  coverflowEffect: {
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
-                  },
-                  pagination: {
-                    el: ".swiper-pagination",
-                  },
+            </div>
+            <!-- Swiper JS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper(".swiper-container", {
+                    effect: "coverflow",
+                    grabCursor: true,
+                    centeredSlides: true,
+                    slidesPerView: "auto",
+                    coverflowEffect: {
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: true,
+                    },
+                    // pagination: {
+                    //     el: ".swiper-pagination",
+                    // },
+                    loop: true,
                 });
-              </script>
+            </script>
         </section>
         <br><br><br><br>
-        </section>
-        <section id="beign_now">
+    </section>
+    <section id="beign_now">
         <div id="start_now">
             <ul>
-                <li><p>Let's Start Our Journey</p></li>
+                <li>
+                    <p>Let's Start Our Journey</p>
+                </li>
                 <p id="btnstart_now"><a href="#">Begin Now</a></p>
             </ul>
         </div>
-        </section>
-    </body>
+    </section>
+</body>
+
 </html>
