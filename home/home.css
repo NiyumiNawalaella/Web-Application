@@ -15,7 +15,7 @@ body
     background-attachment: fixed;
 }
 /*logo*/
-#container #logo
+#logo
 {
     left: 8%;
     top: 30px;
@@ -81,21 +81,73 @@ body
     padding-bottom: 15px;
     border-radius: 5px;
 }
+/* Testimonial */
+.testimonial_heading
+{
+    width: 100%;
+    padding-bottom: 50px; 
+    color: whitesmoke;
+    text-align: center;
+    /* border: solid; */
+    padding: 60px;
+    padding-left: 25%;
+}
+.testimonial_heading h3
+{
+    max-width: 68%;
+    font-size: 3em;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    /* border: solid; */
+    border-bottom: 3px solid #222;
+}
+#testimonial
+{
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2196f3;
+    overflow: hidden; 
+}
+.swiper
+{
+    width: 30%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide 
+{
+    background-position: center;
+    background-size: small;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img 
+{
+    display: block;
+    width: 100%;
+}
 /* start_now btn*/
 #start_now 
 {
     text-align: center;
     box-sizing: content-box;
-    border: solid;
-    padding: 10px;
+    /* border: solid; */
+    padding: 52px;
+    height: 119px;
 }
-#start_now ul li 
+#start_now ul li
 {
     list-style: none;
-    border: solid;
+    /* border: solid;  */
     width: auto;
-    margin-left: -30px;
-    height: 210px;
+    margin-left: 10px;
+    height: 140px;
 }
 #start_now:hover
 {
@@ -103,23 +155,26 @@ body
 }
 #start_now ul li p
 {
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 60px;
     color: white;
     text-align: center;
-}
-#start_now #btnstart_now
+    place-items: center;
+    padding: 20px;
+} 
+#btnstart_now
 {
     height: 60px;
     width: 200px;
     position: absolute;
-    top: 2250px;
-    left: 610px;
+    bottom: auto;
     display: grid;
     place-items: center;
     background: #160aab;
     border-radius: 10px 20px;
     padding: 10px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 #start_now #btnstart_now a
 {

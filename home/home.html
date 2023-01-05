@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS Link-->
         <link rel="stylesheet" type="text/css" href="home.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  
         <!-- JS Link -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/058ca5f5b1.js" crossorigin="anonymous"></script>
@@ -50,13 +52,47 @@
                 </div>
             </div>
         </div>
+        <div class="testimonial_heading">
+            <h3>Testimonial</h3>
+        </div>
+        <section id="testimonial">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <!-- Swiper JS -->
+              <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+          
+              <!-- Initialize Swiper -->
+              <script>
+                var swiper = new Swiper(".mySwiper", {
+                  effect: "coverflow",
+                  grabCursor: true,
+                  centeredSlides: true,
+                  slidesPerView: "auto",
+                  coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                  },
+                  pagination: {
+                    el: ".swiper-pagination",
+                  },
+                });
+              </script>
+        </section>
         <br><br><br><br>
         </section>
         <section id="beign_now">
         <div id="start_now">
             <ul>
                 <li><p>Let's Start Our Journey</p></li>
-                <li id="btnstart_now"><a href="#">Begin Now</a></li>
+                <p id="btnstart_now"><a href="#">Begin Now</a></p>
             </ul>
         </div>
         </section>
