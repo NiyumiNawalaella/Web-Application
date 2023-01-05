@@ -37,6 +37,28 @@ body
     margin-block-start: 80px;
 
 }
+#intro .intro_heading
+{
+    width: 100%;
+    padding-bottom: 50px; 
+    color: whitesmoke;
+    text-align: center;
+    /* border: solid; */
+    padding: 50px;
+    padding-left: 25%;
+}
+#intro .intro_heading h3
+{
+    font-size: 3em;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #222;
+    max-width: 68%;
+}
+#intro .intro_heading h3 span
+{
+    font-weight: 50;
+}
 .gallery
 {
     display: flex;
@@ -205,7 +227,7 @@ body
 {
     text-align: center;
     box-sizing: content-box;
-    /* border: solid; */
+    /* border: solid;  */
     padding: 52px;
     height: 119px;
 }
@@ -226,8 +248,7 @@ body
     font-size: 60px;
     color: white;
     text-align: center;
-    place-items: center;
-    padding: 20px;
+    padding: -20px;
 } 
 #btnstart_now
 {
