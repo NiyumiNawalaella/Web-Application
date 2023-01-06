@@ -37,14 +37,14 @@ body
     margin-block-start: 80px;
 
 }
-#intro .intro_heading
+/* #intro .intro_heading
 {
     width: 100%;
     padding-bottom: 50px; 
     color: whitesmoke;
     text-align: center;
     /* border: solid; */
-    padding: 50px;
+    /* padding: 50px;
     padding-left: 25%;
 }
 #intro .intro_heading h3
@@ -58,6 +58,13 @@ body
 #intro .intro_heading h3 span
 {
     font-weight: 50;
+} */ 
+.multiText
+{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding: -20px;
 }
 .gallery
 {
