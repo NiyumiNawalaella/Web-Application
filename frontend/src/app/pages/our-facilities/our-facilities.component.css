@@ -1,0 +1,130 @@
+#intro .intro_heading
+{
+    width: 100%;
+    padding-bottom: 50px;
+    color: whitesmoke;
+    text-align: center;
+    /* border: solid; */
+    padding: 50px;
+    padding-left: 25%;
+}
+#intro .intro_heading h3
+{
+    font-size: 3em;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #222;
+    max-width: 68%;
+}
+#intro .intro_heading h3 span
+{
+    font-weight: 50;
+}
+button
+{
+  background: transparent;
+  border: none;
+}
+#book_now
+{
+  font-size: 50px;
+  color: #fff;
+  font-weight: 600px;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #fff;
+  padding: 14px;
+  border-radius: 50px;
+}
+.row
+{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    color: snow;
+}
+.facilities
+{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+
+}
+.facilities-col
+{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilities-col img
+{
+    width: 100%;
+    border-radius: 10px;
+}
+.facilities-col p
+{
+    padding: 0;
+}
+.facilities-col h3
+{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+/* start_now btn*/
+#start_now
+{
+    text-align: center;
+    box-sizing: content-box;
+    /* border: solid;  */
+    padding: 65px;
+    height: 119px;
+
+}
+#start_now ul li
+{
+    list-style: none;
+    /* border: solid;  */
+    width: auto;
+    margin-left: 10px;
+    height: 140px;
+}
+#start_now:hover
+{
+    box-shadow: 0 0 50px #ccc;
+}
+#start_now ul li p
+{
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    padding: -20px;
+}
+#btnstart_now
+{
+    height: 60px;
+    width: 200px;
+    position: absolute;
+    bottom: auto;
+    display: grid;
+    place-items: center;
+    background: #160aab;
+    border-radius: 10px 20px;
+    padding: 10px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#start_now #btnstart_now a
+{
+    color: #e9e9eb;
+    font-size: 20px;
+    list-style: none;
+    text-decoration: none;
+}
+#start_now #btnstart_now:hover
+{
+    background-color: black;
+}
