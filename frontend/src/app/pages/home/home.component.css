@@ -58,15 +58,39 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-.banner h2
+.content h1
 {
   color: rgb(2, 15, 37);
   font-size: 70px;
   font-weight: bold;
-  top: 30%;
-  left: 0%;
+  /* top: 30%;
+  left: 0%; */
+  /* margin-block-start: 5%; */
   position: absolute;
   text-align: center;
+}
+#btn
+{
+  /* top: 60%;
+  left: 12%; */
+  transform: translate(50%,60%);
+  /* margin-block-start: 20%; */
+  /* padding-top: 30%; */
+  font-size: 30px;
+  position:absolute;
+}
+.content a
+{
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 30px;
+}
+.content a:hover
+{
+  background-color: white;
+  color: black;
 }
 .gallery
 {
@@ -136,6 +160,7 @@
 {
     position: relative;
     width: 100%;
+    flex-direction: row;
     min-height: 50vh;
     display: flex;
     justify-content: center;
