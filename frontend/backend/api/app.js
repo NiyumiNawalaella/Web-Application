@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const config = require('./config');l
+const config = require('./config');
 const MongoClient = require('mongodb').MongoClient;
 const cors = require('cors');
 
@@ -13,13 +13,20 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-MongoClient.connect(`mongodb://${config.dbHost}`,{userNewUrlParser:true, userUnifiedTopology:true})
+// MongoClient.connect(`mongodb://${config.dbHost}`,{userNewUrlParser:true, userUnifiedTopology:true, useFindAndModify: false, useCreateIndex:true})
 
-.then(client => {
-  const db = client.db(config.dbName);
-  const collection = db.collection(config.dbCollection);
-  app.local[config.dbCollection] = collection;
-})
+// const uri = process.env.ATLAS_URI;
+// mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true});
+
+// // const connection = mongoose.connection;
+// // connection.once('open',()=>{
+// //     console.log("MongoDB database connection establish successfully");
+// // })
+// .then(client => {
+//   const db = client.db(config.dbName);
+//   const collection = db.collection(config.dbCollection);
+//   app.locals[config.dbCollection] = collection;
+// })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
