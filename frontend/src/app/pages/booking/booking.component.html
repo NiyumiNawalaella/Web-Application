@@ -1,1 +1,51 @@
-<p>booking works!</p>
+<form>
+  <table>
+  <tr>
+    <td><label></label><input type="text" placeholder="Enter Your Name" name="username" class="type-1"></td>
+</tr>
+<tr>
+    <td><label></label><input type="email" placeholder="Enter Your Email" name="useremail"  class="type-1"></td>
+</tr>
+<tr>
+  <td><label></label><input type="tel" placeholder="Enter Your Phone Number" name="userphnumber"  class="type-1"></td>
+</tr>
+<tr>
+  <td><label>Facilities</label></td>
+  <td><input type="radio" name="which_facilities" value="0">Tennis</td>
+  <td><label></label><input type="radio" name="which_facilities" value="1">Swimming</td>
+  <td><label></label><input type="radio" name="which_facilities" value="2">Badminton</td>
+</tr>
+<tr>
+  <td><label>Hours Required: </label>
+  <select name="hours_required"  class="type-1">
+    <option value="0"></option>
+    <option value="1">1 Hour</option>
+    <option value="1">2 Hour</option>
+    <option value="1">3 Hour</option>
+    <option value="1">4 Hour</option>
+    <option value="1">5 Hour</option>
+  </select>
+  </td>
+  <td>
+    <label>Start Time:</label><input type="time" name="start_time"  class="type-1">
+  </td>
+  <td>
+    <label>End Time:</label><input type="time" name="end_time"  class="type-1">
+  </td>
+</tr>
+<tr>
+  <td><label>Number of Participants: </label><input type="number" name="num_of_participants"  class="type-1"></td>
+</tr>
+<tr>
+  <td><label>Trainner Required: </label></td>
+  <td><input type="radio" name="trainner" value="0">Yes</td>
+    <td><input type="radio" name="trainner" value="1">No</td>
+</tr>
+<tr>
+  <td><label>Membership No: </label><input type="text" name="membership_no" placeholder="(optional)"  class="type-1"></td>
+</tr>
+<tr>
+  <td><label>Available: </label><input  class="type-1"></td>
+</tr>
+  </table>
+</form>
