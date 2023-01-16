@@ -158,11 +158,12 @@
     /* border: solid; */
     border-bottom: 3px solid #222;
 }
+/* @import '/frontend/src/styles.css'; */
 #testimonial
 {
     position: relative;
     width: 100%;
-    flex-direction: row;
+    /* flex-direction: ; */
     min-height: 50vh;
     display: flex;
     justify-content: center;
