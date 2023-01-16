@@ -158,12 +158,59 @@
     /* border: solid; */
     border-bottom: 3px solid #222;
 }
+.test-container .card
+{
+  width: calc(98%/3);
+}
+
+.testimonial-card
+{
+  display: flex;
+  flex-direction: column;
+  width: calc(100%/3);
+  box-shadow: 0px 4px 4px rgb(0,0,0,0.25);
+  padding: 70px 50px 100px;
+  margin-top: 50px;
+  margin-left: 50px;
+  color: white;
+  border-radius: 20px;
+  background: rgb(104, 104, 104);
+  position: relative;
+}
+.person-text, .person-name
+{
+  color: #222;
+  width: fit-content;
+  margin: auto;
+  /* padding-top: auto; */
+}
+.testimonial-card .profile img
+{
+  top: -45%;
+  /* margin-top: -7%; */
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid;
+}
+.card-body p
+{
+  width: fit-content;
+  text-align: center;
+  margin: auto;
+  /* margin-top: ; */
+  /* padding-top: auto; */
+}
+
 /* @import '/frontend/src/styles.css'; */
-#testimonial
+/* #testimonial
 {
     position: relative;
     width: 100%;
-    /* flex-direction: ; */
+    /* flex-direction: ;
     min-height: 50vh;
     display: flex;
     justify-content: center;
@@ -258,7 +305,7 @@
 .swiper-3d .swiper-slide-shadow-right
 {
     background-image: none;
-}
+} */
 /* start_now btn*/
 #start_now
 {
