@@ -17,6 +17,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { AccountComponent } from './pages/account/account.component';
 import { SettingComponent } from './pages/setting/setting.component';
+import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
 
 // import {
 //   MatTableModule,
@@ -41,7 +42,8 @@ import { SettingComponent } from './pages/setting/setting.component';
     NewsComponent,
     BookingComponent,
     AccountComponent,
-    SettingComponent
+    SettingComponent,
+    BookingsecondComponent
   ],
   imports: [
     BrowserModule,
