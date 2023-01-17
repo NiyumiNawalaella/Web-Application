@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-
+  onAddTestimonials()
+  {
+    alert("Your Feedback has Been Sent and Will be Reviewed.");
+  }
 }

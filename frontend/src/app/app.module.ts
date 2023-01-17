@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// import { MatInputModule} from '@angular/material';
 // import { BrowserAnimationsModule} from '@angular/platform-browser/animations/index';
 // import {HttpClientModule} from '@angular/common/http';
 // import { FormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { BookingComponent } from './pages/booking/booking.component';
 import { AccountComponent } from './pages/account/account.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
+
 
 // import {
 //   MatTableModule,
@@ -48,6 +50,8 @@ import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    // MatInputModule,
     // BrowserAnimationsModule,
   //   MatTableModule,
   // MatProgressSpinnerModule,
