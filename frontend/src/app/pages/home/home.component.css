@@ -190,11 +190,11 @@
 {
   scroll-snap-align: start;
 }
-.testimonial-container
+/* .testimonial-container
 {
-  width: calc(350%/3);
-  /* display: flex; */
-}
+  /* width: calc(150%/3); */
+  /* display: flex;
+} */
 .testimonial-section
 {
   padding: 140px 10px;
