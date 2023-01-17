@@ -158,31 +158,83 @@
     /* border: solid; */
     border-bottom: 3px solid #222;
 }
-.test-container .card
+.media-scroller
 {
-  width: calc(98%/3);
+  --_spacer: 2rem;
+  display: grid;
+  gap: var(--_spacer);
+  grid-auto-flow: column;
+  grid-template-columns: 21%;
+  overflow-x: auto;
+  padding: 0 var(--spacer) var(--_spacer);
+  overscroll-behavior-inline: contain ;
+}
+.media-element
+{
+  display: grid;
+  /* grid-template-rows:auto ; */
+  /* padding-left: 20%; */
+  gap: var(--_spacer);
+  padding: var(--_spacer);
+  background: var(--surface-2);
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-2);
+}
+
+.snaps-inline
+{
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--_spacer,1rem);
+}
+.snaps-inline > *
+{
+  scroll-snap-align: start;
+}
+.testimonial-container
+{
+  width: calc(350%/3);
+  /* display: flex; */
+}
+.testimonial-section
+{
+  padding: 140px 10px;
+  width: 500px;
+  display: flex;
+  /* flex-wrap:; */
+  /* justify-content: space-between; */
 }
 
 .testimonial-card
 {
   display: flex;
   flex-direction: column;
-  width: calc(100%/3);
+  flex-wrap: wrap;
+   /* width: calc(550%/3); */
   box-shadow: 0px 4px 4px rgb(0,0,0,0.25);
-  padding: 70px 50px 100px;
+  padding: 70px 20px 100px;
   margin-top: 50px;
-  margin-left: 50px;
+  /* padding-left: 40%; */
+  margin-left: 400px;
   color: white;
   border-radius: 20px;
   background: rgb(104, 104, 104);
   position: relative;
+
 }
 .person-text, .person-name
 {
   color: #222;
-  width: fit-content;
-  margin: auto;
+  /* width: 1500px; */
+  text-align: center;
   /* padding-top: auto; */
+}
+.person-name
+{
+  color: #160aab;
+}
+span
+{
+  color: aliceblue;
 }
 .testimonial-card .profile img
 {
@@ -198,11 +250,19 @@
 }
 .card-body p
 {
-  width: fit-content;
+  /* width: 200px;
+  height: fit-content; */
+  font-size: larger;
   text-align: center;
-  margin: auto;
-  /* margin-top: ; */
+  /* margin: auto;
+  margin-top: auto;*/
+  /* padding: 10px; */
   /* padding-top: auto; */
+}
+.card-body
+{
+  width: 900px;
+  padding: 10px;
 }
 
 /* @import '/frontend/src/styles.css'; */

@@ -1,7 +1,8 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 declare var name : any
-// declare var swiper :any
+// declare var  swiper :any
 // new name();
 @Component({
   selector: 'app-home',
