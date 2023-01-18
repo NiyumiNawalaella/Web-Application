@@ -60,16 +60,18 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.content h1
+ h1
 {
   color: rgb(2, 15, 37);
   font-size: 4vw;
   font-weight: bold;
   /* top: 30%;
   left: 0%; */
-  /* margin-block-start: 5%; */
+  margin-block-start: 5%;
   position: absolute;
   text-align: center;
+  border: solid;
+  /* font-height: 20vw; */
 }
 #btn
 {
@@ -86,7 +88,7 @@
   text-decoration: none;
   background-color: black;
   color: white;
-  padding: 15px 20px;
+  padding: 45px 30px;
   border-radius: 30px;
 }
 .content a:hover

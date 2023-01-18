@@ -20,6 +20,12 @@ import { AccountComponent } from './pages/account/account.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
 
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { FrontendService } from './frontend.service';
+
+import { map } from 'rxjs/operators';
 
 // import {
 //   MatTableModule,
@@ -51,6 +57,9 @@ import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.comp
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+  ],
     // MatInputModule,
     // BrowserAnimationsModule,
   //   MatTableModule,
@@ -63,7 +72,7 @@ import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.comp
   // MatToolbarModule,
   // HttpClientModule,
   // FormsModule,
-  ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
