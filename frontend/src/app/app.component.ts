@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators, FormsModule, } from '@angular/forms';
-import { FrontendService } from './frontend.service';
-
-import {HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +8,6 @@ import {HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 export class AppComponent {
   title = 'Sports Club Application';
 
-  constructor(private newService: FrontendService,) { }
 }
 //   Repdate;
 //   valbutton = "Save";
@@ -43,3 +38,4 @@ export class AppComponent {
 //     .subscribe(data => {alter(data.data); this.ngOnInit();}, error => this.errorMessage = error)
 //   }
 // }
+

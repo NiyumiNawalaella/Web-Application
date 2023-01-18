@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { MatInputModule} from '@angular/material';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
 // import { BrowserAnimationsModule} from '@angular/platform-browser/animations/index';
 // import {HttpClientModule} from '@angular/common/http';
 // import { FormsModule } from '@angular/forms';
@@ -19,13 +21,14 @@ import { BookingComponent } from './pages/booking/booking.component';
 import { AccountComponent } from './pages/account/account.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
+import { IssueService } from './issue.service';
 
-import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { FrontendService } from './frontend.service';
+// import { HttpClient } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
+// import { FormsModule } from '@angular/forms';
+// import { FrontendService } from './frontend.service';
 
-import { map } from 'rxjs/operators';
+// import { map } from 'rxjs/operators';
 
 // import {
 //   MatTableModule,
@@ -58,7 +61,9 @@ import { map } from 'rxjs/operators';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
+    MatToolbarModule
+    // MatToolbarModule,
+    // FormsModule,
   ],
     // MatInputModule,
     // BrowserAnimationsModule,
@@ -73,7 +78,7 @@ import { map } from 'rxjs/operators';
   // HttpClientModule,
   // FormsModule,
 
-  providers: [],
+  providers: [IssueService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

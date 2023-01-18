@@ -9,6 +9,7 @@ import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { OurWhyComponent } from './pages/our-why/our-why.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { TheProcessComponent } from './pages/the-process/the-process.component';
+// import {  MatToolbarModule } from '@angular/material';s
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -24,6 +25,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
