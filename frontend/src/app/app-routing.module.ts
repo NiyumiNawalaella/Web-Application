@@ -9,6 +9,7 @@ import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { OurWhyComponent } from './pages/our-why/our-why.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { TheProcessComponent } from './pages/the-process/the-process.component';
+import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
 // import {  MatToolbarModule } from '@angular/material';s
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'account', component:AccountComponent},
   {path: 'booking', component:BookingComponent},
   {path: 'setting', component:SettingComponent},
+  {path: 'bookingsecond', component:BookingsecondComponent},
 ];
 
 @NgModule({

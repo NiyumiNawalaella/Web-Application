@@ -2,6 +2,7 @@ table tr td
 {
   border: solid;
   width: 800px;
+  height: 100%;
 }
 form
 {
@@ -9,6 +10,8 @@ form
   margin: 2rem auto;
   border: 2px solid red;
   padding: 2rem;
+  height: auto;
+  width: auto;
 }
 label
 {
@@ -30,8 +33,26 @@ select
   border-radius:10px;
   border: 1px solid #eee;
   transition: .3s border-color;
+  font-size: 1vw;
 }
 .type-1:hover
 {
   border: 1px solid #aaa;
+}
+button
+{
+  width: 10vw;
+  min-height: 3vw;
+  /* height: ; */
+  font-size: 1vw;
+  border-radius: 50px;
+}
+
+.cancelbtn:hover
+{
+  background: rgb(207, 55, 55);
+}
+.nextbtn:hover
+{
+  background: rgb(55, 207, 88)
 }

@@ -1,15 +1,18 @@
 <form>
   <table>
   <tr>
-    <td><label></label><input type="text" placeholder="Enter Your Name" name="username" class="type-1"></td>
+    <td><label></label><input type="text" placeholder="Enter Your Name" name="username" class="type-1" required></td>
 </tr>
 <tr>
-    <td><label></label><input type="email" placeholder="Enter Your Email" name="useremail"  class="type-1"></td>
+    <td><label></label><input type="email" placeholder="Enter Your Email" name="useremail"  class="type-1" required></td>
 </tr>
 <tr>
-  <td><label></label><input type="tel" placeholder="Enter Your Phone Number" name="userphnumber"  class="type-1"></td>
+  <td><label></label><input type="tel" placeholder="Enter Your Phone Number" name="userphnumber"  class="type-1" required></td>
 </tr>
 <tr>
+  <td><br><br></td>
+</tr>
+<!-- <tr>
   <td><label>Facilities</label></td>
   <td><input type="radio" name="which_facilities" value="0">Tennis</td>
   <td><label></label><input type="radio" name="which_facilities" value="1">Swimming</td>
@@ -46,6 +49,9 @@
 </tr>
 <tr>
   <td><label>Available: </label><input  class="type-1"></td>
-</tr>
+</tr> -->
+<tr>
+  <td><button type="reset" name="cancelbtn" class="cancelbtn">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink="/bookingsecond"><button type="submit" name="nextbtn" class="nextbtn">Next</button></a></td>
+  </tr>
   </table>
 </form>

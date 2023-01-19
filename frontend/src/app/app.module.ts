@@ -56,15 +56,14 @@ import { IssueService } from './issue.service';
     SettingComponent,
     BookingsecondComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatToolbarModule
-    // MatToolbarModule,
-    // FormsModule,
-  ],
+  imports: [ BrowserModule, AppRoutingModule],
+  // [
+  //   // BrowserAnimationsModule,
+  //   // HttpClientModule,
+  //   // MatToolbarModule
+  //   // MatToolbarModule,
+  //   // FormsModule,
+  // ],
     // MatInputModule,
     // BrowserAnimationsModule,
   //   MatTableModule,
