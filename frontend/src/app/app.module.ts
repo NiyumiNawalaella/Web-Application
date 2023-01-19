@@ -7,10 +7,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from './app.material.module';
 // import {MatToolbarModule} from '@angular/material/toolbar';
-import { HttpClientModule } from '@angular/common/http';
+//************* */
+// import { HttpClientModule } from '@angular/common/http';
 // import { BrowserAnimationsModule} from '@angular/platform-browser/animations/index';
 // import {HttpClientModule} from '@angular/common/http';
 // import { FormsModule } from '@angular/forms';
+// ***********************************
+// import { MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule } from '@./angular-material-app/angular/material';
+
 import { NavbarComponent } from './sharepage/navbar/navbar.component';
 import { FooterComponent } from './sharepage/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -62,9 +66,9 @@ import { ShedulerModule } from './schedule/scheduler/scheduler.module';
   ],
   imports: [ BrowserModule, AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    // AppMaterialModule,
-    ShedulerModule,
+    // HttpClientModule,  *********
+    // AppMaterialModule, *************
+    // ShedulerModule, ***************
     // MatToolbarModule
     // MatToolbarModule,
     FormsModule,
