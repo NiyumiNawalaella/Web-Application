@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { IssueService } from './issue.service';
 
 describe('IssueService', () => {
