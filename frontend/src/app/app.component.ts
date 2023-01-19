@@ -3,12 +3,30 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Sports Club Application';
-
+  title = 'Sports Club Booking Application';
 }
+
+
+
+
+
+
+
+
+//   public setView: View = 'Month';
+//   public setDate: Date = new Date(2023,1,15);
+//   public eventObject: EventSettingsModel =
+//   {
+//     dataSource: [{
+//       StartTime: new Date(2023,0,17,4,0),
+//       EndTime: new Date(2023,0,17,6,0)
+//     }]
+//   }
+
+// }
 //   Repdate;
 //   valbutton = "Save";
 

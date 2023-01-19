@@ -22,6 +22,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
 import { IssueService } from './issue.service';
+import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
 
 // import { HttpClient } from '@angular/common/http';
 // import { HttpClientModule } from '@angular/common/http';
@@ -56,7 +57,7 @@ import { IssueService } from './issue.service';
     SettingComponent,
     BookingsecondComponent
   ],
-  imports: [ BrowserModule, AppRoutingModule],
+  imports: [ BrowserModule, AppRoutingModule, ScheduleModule, RecurrenceEditorModule],
   // [
   //   // BrowserAnimationsModule,
   //   // HttpClientModule,
