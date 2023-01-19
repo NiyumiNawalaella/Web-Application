@@ -7,9 +7,9 @@ import { NewsComponent } from './pages/news/news.component';
 import { OurFacilitiesComponent } from './pages/our-facilities/our-facilities.component';
 import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { OurWhyComponent } from './pages/our-why/our-why.component';
-import { SettingComponent } from './pages/setting/setting.component';
 import { TheProcessComponent } from './pages/the-process/the-process.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
+import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
 // import {  MatToolbarModule } from '@angular/material';s
 
 const routes: Routes = [
@@ -21,8 +21,10 @@ const routes: Routes = [
   {path: 'news', component:NewsComponent},
   {path: 'account', component:AccountComponent},
   {path: 'booking', component:BookingComponent},
-  {path: 'setting', component:SettingComponent},
   {path: 'bookingsecond', component:BookingsecondComponent},
+  { path: '', redirectTo: 'page1', pathMatch: 'full' },
+  { path: 'page1', component: PageSchedulerComponent },
+  { path: '**', redirectTo: 'page1' }
 ];
 
 @NgModule({

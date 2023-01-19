@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { AppMaterialModule } from './app.material.module';
+// import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 // import { BrowserAnimationsModule} from '@angular/platform-browser/animations/index';
 // import {HttpClientModule} from '@angular/common/http';
@@ -19,10 +21,12 @@ import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { NewsComponent } from './pages/news/news.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { AccountComponent } from './pages/account/account.component';
-import { SettingComponent } from './pages/setting/setting.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
 import { IssueService } from './issue.service';
-import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
+import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
+import { FormActivityComponent } from './schedule/components/form-activity/form-activity.component';
+import { ActivityService } from './schedule/service/activity-service';
+import { ShedulerModule } from './schedule/scheduler/scheduler.module';
 
 // import { HttpClient } from '@angular/common/http';
 // import { HttpClientModule } from '@angular/common/http';
@@ -54,17 +58,17 @@ import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-
     NewsComponent,
     BookingComponent,
     AccountComponent,
-    SettingComponent,
     BookingsecondComponent
   ],
-  imports: [ BrowserModule, AppRoutingModule, ScheduleModule, RecurrenceEditorModule],
-  // [
-  //   // BrowserAnimationsModule,
-  //   // HttpClientModule,
-  //   // MatToolbarModule
-  //   // MatToolbarModule,
-  //   // FormsModule,
-  // ],
+  imports: [ BrowserModule, AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    // AppMaterialModule,
+    ShedulerModule,
+    // MatToolbarModule
+    // MatToolbarModule,
+    FormsModule,
+  ],
     // MatInputModule,
     // BrowserAnimationsModule,
   //   MatTableModule,
@@ -78,7 +82,7 @@ import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-
   // HttpClientModule,
   // FormsModule,
 
-  providers: [IssueService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
