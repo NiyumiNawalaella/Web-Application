@@ -27,10 +27,10 @@ import { BookingComponent } from './pages/booking/booking.component';
 import { AccountComponent } from './pages/account/account.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
 import { IssueService } from './issue.service';
-import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
-import { FormActivityComponent } from './schedule/components/form-activity/form-activity.component';
-import { ActivityService } from './schedule/service/activity-service';
-import { ShedulerModule } from './schedule/scheduler/scheduler.module';
+// import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
+// import { FormActivityComponent } from './schedule/components/form-activity/form-activity.component';
+// import { ActivityService } from './schedule/service/activity-service';
+// import { ShedulerModule } from './schedule/scheduler/scheduler.module';
 
 // import { HttpClient } from '@angular/common/http';
 // import { HttpClientModule } from '@angular/common/http';

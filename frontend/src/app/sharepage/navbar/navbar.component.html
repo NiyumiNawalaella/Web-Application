@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
   <ul id="navi_bar">
       <li><p class="border"><a class="nav-link active" routerLink="our_why" routerLinkActive="active-link">Our Why</a></p></li>
       <li><p class="border"><a class="nav-link active" routerLink="the_process" routerLinkActive="active-link">The Process</a></p></li>
@@ -8,4 +8,23 @@
       <li><p class="border"><a class="nav-link active" routerLink="account" routerLinkActive="active-link">Account</a></p></li>
       <li><p id="book_nowbtn"><a class="nav-link active" routerLink="booking" routerLinkActive="active-link">Book Now</a></p></li>
   </ul>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" class="nav-link active" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><img id ="home_logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="our_why" routerLinkActive="active-link">Our Why <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" routerLink="the_process" routerLinkActive="active-link">The Process <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" routerLink="our_facilities" routerLinkActive="active-link">Our Facilities <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" routerLink="our_story" routerLinkActive="active-link">Our Story <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" routerLink= "account" routerLinkActive="active-link">Account <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" routerLink="booking" routerLinkActive="active-link">Booking <span class="sr-only">(current)</span></a>
+      <!-- <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+    </div>
+  </div>
 </nav>
