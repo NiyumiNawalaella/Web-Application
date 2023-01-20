@@ -23,9 +23,16 @@ import { TheProcessComponent } from './pages/the-process/the-process.component';
 import { OurFacilitiesComponent } from './pages/our-facilities/our-facilities.component';
 import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { BookingComponent } from './pages/booking/booking.component';
-import { AccountComponent } from './pages/account/account.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
 import { IssueService } from './issue.service';
+import { FirstComponent } from './pages/first/first.component';
+import { AdminAccountComponent } from './pages/admin-account/admin-account.component';
+import { UserAccountComponent } from './pages/user-account/user-account.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { UserLoginComponent } from './pages/user-login/user-login.component';
+import { UserRegisterComponent } from './pages/user-register/user-register.component';
+import { AdminChatComponent } from './pages/admin-chat/admin-chat.component';
+import { UserChartComponent } from './pages/user-chart/user-chart.component';
 // import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
 // import { FormActivityComponent } from './schedule/components/form-activity/form-activity.component';
 // import { ActivityService } from './schedule/service/activity-service';
@@ -59,8 +66,15 @@ import { IssueService } from './issue.service';
     OurFacilitiesComponent,
     OurStoryComponent,
     BookingComponent,
-    AccountComponent,
-    BookingsecondComponent
+    BookingsecondComponent,
+    FirstComponent,
+    AdminAccountComponent,
+    UserAccountComponent,
+    AdminLoginComponent,
+    UserLoginComponent,
+    UserRegisterComponent,
+    AdminChatComponent,
+    UserChartComponent
   ],
   imports: [ BrowserModule, AppRoutingModule,
     BrowserAnimationsModule,
