@@ -1,0 +1,14 @@
+.chart
+{
+  margin-top: 10rem;
+}
+div.chart-content
+{
+  border-radius: 25rem;
+  height: 40rem;
+  margin-bottom: 2rem;
+}
+.card
+{
+  height: 100%;
+}

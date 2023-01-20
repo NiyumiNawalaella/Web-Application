@@ -1,0 +1,23 @@
+#btn
+{
+  /* top: 40%;
+  left: 7%; */
+  transform: translate(90%,70%);
+  margin-block-start: 20%;
+  /* padding-top: 30%; */
+  font-size: 2vw;
+  position:absolute;
+}
+a
+{
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 45px 30px;
+  border-radius: 30px;
+}
+a:hover
+{
+  background-color: white;
+  color: black;
+}

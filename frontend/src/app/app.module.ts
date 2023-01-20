@@ -32,7 +32,7 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { UserLoginComponent } from './pages/user-login/user-login.component';
 import { UserRegisterComponent } from './pages/user-register/user-register.component';
 import { AdminChatComponent } from './pages/admin-chat/admin-chat.component';
-import { UserChartComponent } from './pages/user-chart/user-chart.component';
+import { UserChatComponent } from './pages/user-chat/user-chat.component';
 // import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
 // import { FormActivityComponent } from './schedule/components/form-activity/form-activity.component';
 // import { ActivityService } from './schedule/service/activity-service';
@@ -74,7 +74,7 @@ import { UserChartComponent } from './pages/user-chart/user-chart.component';
     UserLoginComponent,
     UserRegisterComponent,
     AdminChatComponent,
-    UserChartComponent
+    UserChatComponent
   ],
   imports: [ BrowserModule, AppRoutingModule,
     BrowserAnimationsModule,
