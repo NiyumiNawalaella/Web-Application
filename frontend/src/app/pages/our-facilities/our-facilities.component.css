@@ -73,7 +73,7 @@ button
     margin-bottom: 15px;
     text-align: left;
 }
-/* start_now btn*/
+/* start now */
 #start_now
 {
     text-align: center;
@@ -81,7 +81,6 @@ button
     /* border: solid;  */
     padding: 65px;
     height: 119px;
-
 }
 #start_now ul li
 {
@@ -97,7 +96,7 @@ button
 }
 #start_now ul li p
 {
-    font-size: 60px;
+    font-size: 4vw;
     color: white;
     text-align: center;
     padding: -20px;
@@ -120,7 +119,7 @@ button
 #start_now #btnstart_now a
 {
     color: #e9e9eb;
-    font-size: 20px;
+    font-size: 1vw;
     list-style: none;
     text-decoration: none;
 }

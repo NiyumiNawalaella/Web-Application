@@ -22,7 +22,6 @@ import { OurWhyComponent } from './pages/our-why/our-why.component';
 import { TheProcessComponent } from './pages/the-process/the-process.component';
 import { OurFacilitiesComponent } from './pages/our-facilities/our-facilities.component';
 import { OurStoryComponent } from './pages/our-story/our-story.component';
-import { NewsComponent } from './pages/news/news.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { AccountComponent } from './pages/account/account.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
@@ -59,7 +58,6 @@ import { IssueService } from './issue.service';
     TheProcessComponent,
     OurFacilitiesComponent,
     OurStoryComponent,
-    NewsComponent,
     BookingComponent,
     AccountComponent,
     BookingsecondComponent
