@@ -36,7 +36,7 @@ a:hover
   text-decoration: none;
     box-sizing: border-box;
     border: 2px solid #160aab; /*white and tranparent*/
-    padding: 10px;
+    /* padding: 10px 10px 10px; */
 }
 button
 {
@@ -87,6 +87,6 @@ button
     background-clip: padding-box;
     background-size: contain;
     /* background-clip: 130%; */
-    padding-left: 50%;
+    padding-left: 100%;
     background-repeat: no-repeat;
 }
