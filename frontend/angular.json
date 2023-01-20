@@ -30,7 +30,7 @@
               "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
             ],
             "scripts": [
-              "src/assets/homeJS/home.js"
+              "src/assets/homeJS/home.js", "src/assets/navJS/nav.js"
             ]
           },
           "configurations": {
