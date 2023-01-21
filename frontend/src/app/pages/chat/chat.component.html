@@ -1,4 +1,4 @@
-<p>user-chat works!</p>
+<p>chat works!</p>
 <main class="chart">
   <div class="containner">
     <div class="chart-connent">
@@ -8,14 +8,14 @@
             <strong>Sara:</strong>
             <span>Hello!</span>
           </li>
-          <li class="list group item">
+          <li class="list-group-item">
             <strong>User:</strong>
             <span>Hi!</span>
           </li>
         </ul>
       </div>
     </div>
-    <form>
+    <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
       <div class="chart-send row">
         <div class="col-2">
           <input type="text" class="form-control" name="user" id="input-user">

@@ -1,0 +1,22 @@
+.chart
+{
+  margin-top: 10rem;
+  width: 80vw;
+  height: 40vw;
+  padding-left: 20%;
+}
+/* div.chart-content
+{
+  border-radius: 35rem;
+  height: 100vw;
+  width: 2rem;
+  margin-bottom: 9rem;
+} */
+.chat-card
+{
+  height: 100%;
+}
+.list-group-item
+{
+  min-width: 50%;
+}

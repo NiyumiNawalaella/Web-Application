@@ -15,6 +15,7 @@ import { UserRegisterComponent } from './pages/user-register/user-register.compo
 import { FirstComponent } from './pages/first/first.component';
 import { AdminChatComponent } from './pages/admin-chat/admin-chat.component';
 import { UserChatComponent } from './pages/user-chat/user-chat.component';
+import { ChatComponent } from './pages/chat/chat.component';
 import { first } from 'rxjs-compat/operator/first';
 // import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
 // import { FormActivityComponent } from './schedule/components/form-activity/form-activity.component';
@@ -41,6 +42,7 @@ const routes: Routes = [
   {path: 'user_login', component:UserLoginComponent},
   {path: 'user_register', component:UserRegisterComponent},
   {path: 'user_chat', component:UserChatComponent},
+  {path: 'chat', component:ChatComponent},
   {path: 'first', component:FirstComponent},
 
   // { path: '', redirectTo: 'page1', pathMatch: 'full' },
