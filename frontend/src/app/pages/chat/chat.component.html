@@ -1,22 +1,22 @@
 <p>chat works!</p>
-<main class="chart">
+<main class="chat">
   <div class="containner">
-    <div class="chart-connent">
+    <div class="chat-connent">
       <div class="chat-card">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <strong>Sara:</strong>
-            <span>Hello!</span>
+          <li class="list-group-item" *ngFor="let chatMessage of webSocketService.chatMessage">
+            <strong>{{chatMessage.user}}</strong>
+            <span>{{chatMessage.message}</span>
           </li>
-          <li class="list-group-item">
+          <!-- <li class="list-group-item">
             <strong>User:</strong>
             <span>Hi!</span>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
     <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
-      <div class="chart-send row">
+      <div class="chat-send row">
         <div class="col-2">
           <input type="text" class="form-control" name="user" id="input-user">
         </div>

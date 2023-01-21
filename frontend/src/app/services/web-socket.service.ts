@@ -6,7 +6,7 @@ import { ChatMessageDto } from '../pages/models/chatMessageDto';
 })
 export class WebSocketService {
 
-  webSocket: WebSocket;
+  webSocket!: WebSocket;
   chatMessage: ChatMessageDto[]= [];
 
   constructor() { }
