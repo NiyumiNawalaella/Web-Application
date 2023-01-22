@@ -15,8 +15,6 @@ import { AuthGuard } from './auth.guard';
 // import {HttpClientModule} from '@angular/common/http';
 // import { FormsModule } from '@angular/forms';
 // ***********************************
-// import { MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule } from '@./angular-material-app/angular/material';
-
 import { NavbarComponent } from './sharepage/navbar/navbar.component';
 import { FooterComponent } from './sharepage/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -47,16 +45,16 @@ import { SecondComponent } from './second/second.component';
 
 // import { map } from 'rxjs/operators';
 
-// import {
-//   MatTableModule,
-//   MatProgressSpinnerModule,
-//   MatFormFieldModule,
-//   MatInputModule,
-//   MatButtonModule,
-//   MatDatepickerModule,
-//   MatNativeDataModule,
-//   MatToolbarModule,
-// } from '@angular/core';
+import {
+  MatTableModule,
+  MatProgressSpinnerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatDatepickerModule,
+  MatNativeDataModule,
+  MatToolbarModule,
+} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,25 +80,20 @@ import { SecondComponent } from './second/second.component';
   imports: [ BrowserModule, AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatTableModule,
+  MatProgressSpinnerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatDatepickerModule,
+  MatNativeDataModule,
+  MatToolbarModule,
     // AppMaterialModule, *************
     // ShedulerModule, ***************
     // MatToolbarModule
     // MatToolbarModule,
     FormsModule
   ],
-    // MatInputModule,
-    // BrowserAnimationsModule,
-  //   MatTableModule,
-  // MatProgressSpinnerModule,
-  // MatFormFieldModule,
-  // MatInputModule,
-  // MatButtonModule,
-  // MatDatepickerModule,
-  // MatNativeDataModule,
-  // MatToolbarModule,
-  // HttpClientModule,
-  // FormsModule,
-
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
