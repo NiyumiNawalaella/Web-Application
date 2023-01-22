@@ -1,7 +1,6 @@
-const { ObjectID } = require('bson');
 var express = require('express');
 var router = express.Router();
-const ObjectId = require('mongodb').ObjectId;
+const ObjectID = require('mongodb').ObjectID;
 
 router.get('/bookings', (req, res, next) => {
   req.collection.find({})
