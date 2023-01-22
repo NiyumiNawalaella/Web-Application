@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
+  loggedInStatus = false
   constructor(private http: HttpClient) { }
 
   getUserDetails(email: any, password: any)

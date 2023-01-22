@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookingComponent } from './pages/booking/booking.component';
 import { HomeComponent } from './pages/home/home.component';
 import { OurFacilitiesComponent } from './pages/our-facilities/our-facilities.component';
-import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { OurWhyComponent } from './pages/our-why/our-why.component';
 import { TheProcessComponent } from './pages/the-process/the-process.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
@@ -35,7 +34,6 @@ const routes: Routes = [
   {path: 'our_why', component:OurWhyComponent},
   {path: 'the_process', component:TheProcessComponent},
   {path: 'our_facilities', component:OurFacilitiesComponent},
-  {path: 'our_story', component:OurStoryComponent},
   {path: 'booking', component:BookingComponent},
   {path: 'bookingsecond', component:BookingsecondComponent},
   {path: 'admin_account', component:AdminAccountComponent},
