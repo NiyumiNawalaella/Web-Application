@@ -4,7 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule} from '@angular/common/http';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
 // import { AppMaterialModule } from './app.material.module';
 // import {MatToolbarModule} from '@angular/material/toolbar';
 //************* */
@@ -101,7 +103,7 @@ import { SecondComponent } from './second/second.component';
   // HttpClientModule,
   // FormsModule,
 
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

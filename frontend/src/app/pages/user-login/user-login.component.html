@@ -1,7 +1,8 @@
-<form id="myform" (submit)="loginUser($event)">
-  <input type="email" placeholder="Email Address">
-  <input type="password" placeholder="Password">
+<form id="myform" (ngSubmit)="loginUser($event)">
+  <input type="email" placeholder="Email Address" id="useremail">
+  <input type="password" placeholder="Password" id="userpassword">
 
-<input type="submit" routerLink="/user_account" value="Enter">
+<input type="submit" routerLink="" value="Enter">
 
 </form>
+<!-- /user_account -->

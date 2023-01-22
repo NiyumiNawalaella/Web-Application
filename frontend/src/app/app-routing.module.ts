@@ -19,6 +19,7 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { first } from 'rxjs-compat/operator/first';
 import { HttpClientModule } from '@angular/common/http';
 import { SecondComponent } from './second/second.component';
+import { AuthGuard } from './auth.guard';
 // import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
 // import { FormActivityComponent } from './schedule/components/form-activity/form-activity.component';
 // import { CalendarComponent } from './schedule/scheduler/calendar/calendar.component';
@@ -38,7 +39,7 @@ const routes: Routes = [
   {path: 'booking', component:BookingComponent},
   {path: 'bookingsecond', component:BookingsecondComponent},
   {path: 'admin_account', component:AdminAccountComponent},
-  {path: 'admin_login', component:AdminLoginComponent},
+  {path: 'admin_login', component:AdminLoginComponent, canActivate: [AuthGuard]},
   {path: 'admin_chart', component:AdminChatComponent},
   {path: 'user_account', component:UserAccountComponent},
   {path: 'user_login', component:UserLoginComponent},
