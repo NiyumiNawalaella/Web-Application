@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-login',
@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class UserLoginComponent {
 
+  constructore()
+  {
+
+  }
+  ngOnInit()
+  {
+
+  }
+
+  // loginUser(event)
+  // {
+  //   console.log(event)
+  // }
 }

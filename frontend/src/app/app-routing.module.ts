@@ -17,6 +17,8 @@ import { AdminChatComponent } from './pages/admin-chat/admin-chat.component';
 import { UserChatComponent } from './pages/user-chat/user-chat.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { first } from 'rxjs-compat/operator/first';
+import { HttpClientModule } from '@angular/common/http';
+import { SecondComponent } from './second/second.component';
 // import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
 // import { FormActivityComponent } from './schedule/components/form-activity/form-activity.component';
 // import { CalendarComponent } from './schedule/scheduler/calendar/calendar.component';
@@ -44,10 +46,10 @@ const routes: Routes = [
   {path: 'user_chat', component:UserChatComponent},
   {path: 'chat', component:ChatComponent},
   {path: 'first', component:FirstComponent},
-
-  // { path: '', redirectTo: 'page1', pathMatch: 'full' },
-  // { path: 'page1', component: PageSchedulerComponent },
-  // { path: '**', redirectTo: 'page1' }
+  {path: 'second', component:SecondComponent}
+  // { path: 'first', redirectTo: 'our_facilities', pathMatch: 'full' },
+  // { path: 'our_facilities', component: HomeComponent },
+  // { path: '**', redirectTo: 'our_facilities' }
 ];
 
 @NgModule({

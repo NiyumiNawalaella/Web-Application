@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule} from '@angular/common/http'
 // import { AppMaterialModule } from './app.material.module';
 // import {MatToolbarModule} from '@angular/material/toolbar';
 //************* */
@@ -24,7 +24,6 @@ import { OurFacilitiesComponent } from './pages/our-facilities/our-facilities.co
 import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
-import { IssueService } from './issue.service';
 import { FirstComponent } from './pages/first/first.component';
 import { AdminAccountComponent } from './pages/admin-account/admin-account.component';
 import { UserAccountComponent } from './pages/user-account/user-account.component';
@@ -34,6 +33,7 @@ import { UserRegisterComponent } from './pages/user-register/user-register.compo
 import { AdminChatComponent } from './pages/admin-chat/admin-chat.component';
 import { UserChatComponent } from './pages/user-chat/user-chat.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import { SecondComponent } from './second/second.component';
 // import { PageSchedulerComponent } from './schedule/components/page-scheduler/page-scheduler.component';
 // import { FormActivityComponent } from './schedule/components/form-activity/form-activity.component';
 // import { ActivityService } from './schedule/service/activity-service';
@@ -76,16 +76,17 @@ import { ChatComponent } from './pages/chat/chat.component';
     UserRegisterComponent,
     AdminChatComponent,
     UserChatComponent,
-    ChatComponent
+    ChatComponent,
+    SecondComponent,
   ],
   imports: [ BrowserModule, AppRoutingModule,
     BrowserAnimationsModule,
-    // HttpClientModule,  *********
+    HttpClientModule,
     // AppMaterialModule, *************
     // ShedulerModule, ***************
     // MatToolbarModule
     // MatToolbarModule,
-    FormsModule,
+    FormsModule
   ],
     // MatInputModule,
     // BrowserAnimationsModule,
