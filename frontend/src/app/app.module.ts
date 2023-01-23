@@ -44,17 +44,15 @@ import { SecondComponent } from './second/second.component';
 // import { FrontendService } from './frontend.service';
 
 // import { map } from 'rxjs/operators';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core/';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
-import {
-  MatTableModule,
-  MatProgressSpinnerModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatDatepickerModule,
-  MatNativeDataModule,
-  MatToolbarModule,
-} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,8 +84,8 @@ import {
   MatInputModule,
   MatButtonModule,
   MatDatepickerModule,
-  MatNativeDataModule,
   MatToolbarModule,
+  MatNativeDateModule,
     // AppMaterialModule, *************
     // ShedulerModule, ***************
     // MatToolbarModule
