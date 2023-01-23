@@ -13,7 +13,7 @@ export class AdminAccountComponent implements OnInit {
   public errorMsg: string;
   public successMsg: string;
   public bookings: Booking[];
-
+  public columns = ['username', 'email', 'phnum', 'facilities', 'startdateandtime', 'enddateandtime', 'assitancerequirement', 'number_of_participants', 'membershipno', 'cancel'];
 
   constructor(private authService: AuthService) {}
 
