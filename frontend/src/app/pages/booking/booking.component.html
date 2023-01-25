@@ -1,17 +1,21 @@
-<form>
+<mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
+<mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar>
+<div class="form-container">
+<form (submit="createBooking()")>
   <table>
   <tr>
-    <td><label></label><input type="text" placeholder="Enter Your Name" name="username" class="type-1" required></td>
+    <td><label></label><mat-form-field><input [(ngModel)]="username" type="text" placeholder="Enter Your Name" name="username" class="type-1" required></mat-form-field></td>
 </tr>
 <tr>
-    <td><label></label><input type="email" placeholder="Enter Your Email" name="useremail"  class="type-1" required></td>
+    <td><label></label><mat-form-field><input [(ngModel)]="email" type="email" placeholder="Enter Your Email" name="useremail"  class="type-1" required></mat-form-field></td>
 </tr>
 <tr>
-  <td><label></label><input type="tel" placeholder="Enter Your Phone Number" name="userphnumber"  class="type-1" required></td>
+  <td><label></label><mat-form-field><input [(ngModel)]="phnum" type="tel" placeholder="Enter Your Phone Number" name="userphnumber"  class="type-1" required></mat-form-field></td>
 </tr>
 <tr>
   <td><br><br></td>
 </tr>
+this.username, this.email, this.phnum, this.facilities, this.startdateandtime, this.enddateandtime, this.assitancerequirement, this.number_of_participants, this.membershipno
 <!-- <tr>
   <td><label>Facilities</label></td>
   <td><input type="radio" name="which_facilities" value="0">Tennis</td>
@@ -55,3 +59,4 @@
   </tr>
   </table>
 </form>
+</div>
