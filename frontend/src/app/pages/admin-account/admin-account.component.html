@@ -26,7 +26,7 @@
     </ng-container>
     <ng-container matColumnDef="enddateandtime">
       <th mat-header-cell *matHeaderCellDef>Booking End Date and Time</th>
-      <td mat-cell *matCellDef="let booking"> {{ booking.enddateandtime }}</td>
+      <td mat-cell *matCellDef="let booking"> {{ booking.enddateandtime | date:'dd/MM/yyyy'}}</td>
     </ng-container>
     <ng-container matColumnDef="assitancerequirement">
       <th mat-header-cell *matHeaderCellDef>Tranieer Required or not</th>

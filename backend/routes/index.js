@@ -21,7 +21,9 @@ router.post('/bookings', (req, res, next) => {
   const payload = {username, email, phnum, facilities, startdateandtime, enddateandtime, assitancerequirement, number_of_participants,  membershipno};
   req.collection.insertOne(payload)
   .then(result => res.json(result))
-  .catch(error => res.send(error));
+  .catch(error => res.satus(400).json(
+    { message: 'No Bookings available on that date with that time'},
+  ));
 });
 
 router.delete('/bookings/:id', (req, res, next) => {

@@ -1,21 +1,63 @@
 <mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
 <mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar>
 <div class="form-container">
-<form (submit="createBooking()")>
+<form (submit="createBookings()")>
   <table>
   <tr>
-    <td><label></label><mat-form-field><input [(ngModel)]="username" type="text" placeholder="Enter Your Name" name="username" class="type-1" required></mat-form-field></td>
+    <td><label></label><mat-form-field><input [(ngModel)]="username" type="text" matInput placeholder="Enter Your Name" name="username" class="type-1" required></mat-form-field></td>
 </tr>
 <tr>
-    <td><label></label><mat-form-field><input [(ngModel)]="email" type="email" placeholder="Enter Your Email" name="useremail"  class="type-1" required></mat-form-field></td>
+    <td><label></label><mat-form-field><input [(ngModel)]="email" type="email" matInput placeholder="Enter Your Email" name="email"  class="type-1" required></mat-form-field></td>
 </tr>
 <tr>
-  <td><label></label><mat-form-field><input [(ngModel)]="phnum" type="tel" placeholder="Enter Your Phone Number" name="userphnumber"  class="type-1" required></mat-form-field></td>
+  <td><label></label><mat-form-field><input [(ngModel)]="phnum" type="tel" matInput placeholder="Enter Your Phone Number" name="phnum"  class="type-1" required></mat-form-field></td>
+</tr>
+<tr>
+  <mat-form-field>
+  <td><label class="type-1">Select Which Facilities to Book</label></td>
+  <td><label></label><input type="radio" [(ngModel)]="facilities" name="facilities" value="0" class="type-1">Tennis</td>
+  <td><label></label><input type="radio" [(ngModel)]="facilities" name="facilities" value="1" class="type-1">Swimming</td>
+  <td><label></label><input type="radio" [(ngModel)]="facilities" name="facilities" value="2" class="type-1">Badminton</td>
+  </mat-form-field>
+</tr>
+<tr>
+  <td>
+    <mat-form-field>
+    <label class="type-1"> Start Date and Time:</label><input [(ngModel)]="startdateandtime" type="datetime" name="startdateandtime" matInput [matDatepicker]="picker" class="type-1">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </td>
+</tr>
+<tr>
+  <td>
+    <mat-form-field>
+    <label class="type-1"> End Date and Time:</label><input [(ngModel)]="enddateandtime" type="datetime" name="enddateandtime" matInput [matDatepicker]="picker" class="type-1">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </td>
+</tr>
+<tr>
+  <mat-form-field>
+  <td><label class="type-1">Number of Participants: </label><input [(ngModel)]="number_of_participants" type="number" name="num_of_participants"  class="type-1"></td>
+  </mat-form-field>
+</tr>
+<tr>
+  <mat-form-field>
+  <td><label class="type-1">Trainner Required: </label></td>
+  <td><input type="radio" [(ngModel)]="assitancerequirement" name="assitancerequirement" value="0" class="type-1">Yes</td>
+    <td><input type="radio"[(ngModel)]="assitancerequirement" name="assitancerequirement" value="1" class="type-1">No</td>
+  </mat-form-field>
+</tr>
+<tr>
+  <mat-form-field>
+  <td><label>Membership Number: </label><input type="text" [(ngModel)]="membershipno" name="membershipno" matInput placeholder="(optional)"  class="type-1"></td>
+  </mat-form-field>
 </tr>
 <tr>
   <td><br><br></td>
 </tr>
-this.username, this.email, this.phnum, this.facilities, this.startdateandtime, this.enddateandtime, this.assitancerequirement, this.number_of_participants, this.membershipno
 <!-- <tr>
   <td><label>Facilities</label></td>
   <td><input type="radio" name="which_facilities" value="0">Tennis</td>
@@ -55,7 +97,7 @@ this.username, this.email, this.phnum, this.facilities, this.startdateandtime, t
   <td><label>Available: </label><input  class="type-1"></td>
 </tr> -->
 <tr>
-  <td><button type="reset" name="cancelbtn" class="cancelbtn">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink="/bookingsecond"><button type="submit" name="nextbtn" class="nextbtn">Next</button></a></td>
+  <td><button mat-raised-button type="reset" name="cancelbtn" class="cancelbtn">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink="/payment"><button mat-raised-button type="submit" name="nextbtn" class="nextbtn">Submit</button></a></td>
   </tr>
   </table>
 </form>
