@@ -17,6 +17,9 @@ export class AuthService {
       //sending a web request to create a booking
       return this.webRequestService.post('bookings',{uname,uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno});
      }
+     getBookings() {
+      return this.webRequestService.get('bookings');
+     }
   // createBooking(title:string) {
   //   //sending a web request to create a booking
   //   return this.webRequestService.post('bookings', {title});

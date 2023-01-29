@@ -20,6 +20,8 @@ export class BookingComponent implements OnInit
   createBooking(uname:string, uemail:string, uphonumber:string, facilities:string, startdateandtime:string, enddateandtime:string, no_of_participants:string, trainner: string, membershipno:string) {
     this.authService.createBooking(uname, uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno).subscribe((response: any) => {
     console.log(response);
+    //Now navigation to /bookings/response._id
+
    });
   }
 }
