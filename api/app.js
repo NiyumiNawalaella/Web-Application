@@ -50,6 +50,11 @@ app.post('/bookings',(req, res) => {
 
 app.patch('/bookings/:id',(req, res) => {
     //To update the specified bookings (booking document with id in the URL) with the new values specified in the JSON body of the request in admin account page.
+    Booking.findOneAndUpdate({ _id: req.params.id}, {
+        $set: req.body
+    }).then(() => {
+        res.sendStatus(200);
+    });
 });
 
 // PATH /Bookings/:id
@@ -57,6 +62,64 @@ app.patch('/bookings/:id',(req, res) => {
 
 app.delete('/bookings/:id',(req, res) => {
     //to delete the specified booking (document with id in the URL) from the admin account page.
+    Booking.findOneAndRemove({
+        _id: req.params.id
+    }).then((removedBookingDoc) =>{
+        res.send(removedBookingDoc);
+    })
+});
+
+app.get('/bookings/:bookingId/bookinglists', (req,res) => {
+//getting all the bookings list to account of admin to view.
+BookingList.find({
+    _BookingId: req.params.bookingId
+}).then((bookinglists) => {
+    res.send(bookinglists);
+})
+});
+
+app.get('/bookings/:bookingId/bookinglists/:bookinglistId', (req, res) => {
+    //specified to get one document by ID.
+    BookingList.findOne({
+        _id: req.params.bookinglistId,
+        _BookingId: req.params.bookingId
+    }).then((bookinglist) => {
+        res.send(bookinglist);
+    })
+})
+
+app.post('/bookings/:bookingId/bookinglists', (req, res) => {
+    //posting all the bookings list to account of admin to view.
+    let newBookingList = new BookingList({
+        title: req.body.title,
+        _BookingId: req.params.bookingId
+    });
+    newBookingList.save().then((newBookingListDoc) => {
+        res.send(newBookingListDoc);
+    })
+});
+
+app.patch('/bookings/:bookingId/bookinglists/:bookinglistId', (req,res) => {
+    // updating an existing booking from the booking list in the account of the admin
+    BookingList.findOneAndUpdate({
+        _id: req.params.bookinglistId,
+        _BookingId: req.params.bookingId
+    }, {
+        $set: req.body
+    }
+    ).then(() => {
+        res.sendStatus(200);
+    })
+});
+
+app.delete('/bookings/:bookingId/bookinglists/:bookinglistId', (req,res) => {
+    // deleting an existing booking from the booking list in the account of the admin
+    BookingList.findOneAndRemove({
+        _id: req.params.bookinglistId,
+        _BookingId: req.params.bookingId
+    }).then((removedBookingListDoc) => {
+        res.send(removedBookingListDoc);
+    })
 });
 
 app.listen(3000,() => {
