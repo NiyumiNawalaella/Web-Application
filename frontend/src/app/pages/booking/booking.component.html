@@ -4,6 +4,13 @@
 <div class="centered-content">
   <div class="modal-box">
 <!-- <div class="form-container"> -->
+  <section id="intro">
+    <div id="content">
+    <div class="intro_heading">
+        <h3>Booking <span>Details</span></h3>
+    </div>
+  </div>
+  </section>
   <form>
     <table>
     <tr>
@@ -17,7 +24,7 @@
   </tr>
   <tr>
 
-    <td><label class="type-1">Select Which Facilities to Book</label></td>
+    <td><label class="type-1">Select Which Facilities to Book:</label></td>
     <td><label></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="facilities" value="0" > &nbsp; Tennis</td>
     <td><label></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="facilities" value="1"> &nbsp; Swimming</td>
     <td><label></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="facilities" value="2">  &nbsp; Badminton</td>
@@ -25,15 +32,15 @@
   </tr>
   <tr>
     <td>
-
       <label class="type-1"> Start Date and Time:</label>
       </td>
       <td colspan="3">
-        <input  type="datetime-local" name="startdateandtime" matInput  class="type-1">
-      <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker> -->
-
-    </td>
+      <mat-form-field>
+        <input  type="datetime" name="startdateandtime" matInput  class="type-1">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  </td>
   </tr>
   <tr>
     <td>
@@ -41,10 +48,11 @@
       <label class="type-1"> End Date and Time:</label>
       </td>
       <td colspan="3">
-        <input  type="datetime-local" name="enddateandtime" matInput  class="type-1">
-      <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker> -->
-
+      <mat-form-field>
+        <input  type="datetime" name="enddateandtime" matInput  class="type-1">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
     </td>
   </tr>
   <tr>
