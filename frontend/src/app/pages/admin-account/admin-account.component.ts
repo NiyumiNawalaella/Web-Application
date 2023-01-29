@@ -9,36 +9,36 @@ import { mergeMap} from 'rxjs/operators'
 })
 export class AdminAccountComponent implements OnInit {
 
-  public loading = true;
-  public errorMsg: string;
-  public successMsg: string;
-  public bookings: Booking[];
-  public columns = ['username', 'email', 'phnum', 'facilities', 'startdateandtime', 'enddateandtime', 'assitancerequirement', 'number_of_participants', 'membershipno', 'cancel'];
+  // public loading = true;
+  // public errorMsg: string;
+  // public successMsg: string;
+  // public bookings: Booking[];
+  // public columns = ['username', 'email', 'phnum', 'facilities', 'startdateandtime', 'enddateandtime', 'assitancerequirement', 'number_of_participants', 'membershipno', 'cancel'];
 
-  constructor(private authService: AuthService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.authService.getBookings().subscribe((bookings:Booking[]) => {
-      this.bookings = bookings;
-      this.loading = false;
-    },
-    (error: ErrorEvent) => {
-      this.errorMsg = error.error.message;
-      this.loading = false;
-    });
+    // this.authService.getBookings().subscribe((bookings:Booking[]) => {
+    //   this.bookings = bookings;
+    //   this.loading = false;
+    // },
+    // (error: ErrorEvent) => {
+    //   this.errorMsg = error.error.message;
+    //   this.loading = false;
+    // });
   }
-  cancelBooking(id: string)
-  {
-    this.authService.cancelBooking(id)
-    .pipe(
-      mergeMap(() => this.authService.getBookings())
-    )
-    .subscribe((appointments: Booking[]) => {
-      this.bookings = this.bookings;
-      this.successMsg = 'Successfully Cancelled the appointment'
-    },
-    (error: ErrorEvent) => {
-      this.errorMsg = error.error.message;
-    });
-  }
+  // cancelBooking(id: string)
+  // {
+  //   this.authService.cancelBooking(id)
+  //   .pipe(
+  //     mergeMap(() => this.authService.getBookings())
+  //   )
+  //   .subscribe((appointments: Booking[]) => {
+  //     this.bookings = this.bookings;
+  //     this.successMsg = 'Successfully Cancelled the appointment'
+  //   },
+  //   (error: ErrorEvent) => {
+  //     this.errorMsg = error.error.message;
+  //   });
+  // }
 }
