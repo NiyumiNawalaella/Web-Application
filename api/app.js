@@ -43,9 +43,18 @@ app.post('/bookings',(req, res) => {
     //To create a new booking and reurn the new booking documnet back to the user(which includes the id)
     //and also all the bookings should be shown in admin account.
     //the booking information (fields) will be passed in via the JSON request body.
-    let title = req.body.title;
+    // let title = req.body.title;
+    let uname = req.body.uname;
+    let uemail = req.body.uemail;
+    let uphonumber = req.body.uphonumber;
+    let facilities = req.body.facilities;
+    let startdateandtime = req.body.startdateandtime;
+    let enddateandtime = req.body.enddateandtime;
+    let no_of_participants = req.body.no_of_participants;
+    let trainner = req.body.trainner;
+    let membershipno = req.body.membershipno;
     let newBooking = new Booking({
-        title
+        uname, uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno
     });
     newBooking.save().then((bookingDoc) => {
         //the full list document is returned with the id.

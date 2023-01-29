@@ -13,10 +13,14 @@ export class AuthService {
 
   constructor(private webRequestService: WebRequestService) {}
 
-  createBooking(title:string) {
-    //sending a web request to create a booking
-    return this.webRequestService.post('bookings', {title});
-   }
+  createBooking(uname:string, uemail:string, uphonumber:string, facilities:string, startdateandtime:string, enddateandtime:string, no_of_participants:string, trainner: string, membershipno:string) {
+      //sending a web request to create a booking
+      return this.webRequestService.post('bookings',{uname,uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno});
+     }
+  // createBooking(title:string) {
+  //   //sending a web request to create a booking
+  //   return this.webRequestService.post('bookings', {title});
+  //  }
 }
   // loggedInStatus = false
   // constructor(private http: HttpClient) { }

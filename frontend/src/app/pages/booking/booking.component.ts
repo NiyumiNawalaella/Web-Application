@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
-import { Booking } from 'src/app/booking';
+
 // import { IssueService } from '../../issue.service';
 
 @Component({
@@ -17,13 +17,17 @@ export class BookingComponent implements OnInit
   ngOnInit() {
 
   }
-
-  createNewBooking(){
-    this.authService.createBooking('Testing').subscribe((response: any) => {
-      console.log(response);
-    });
+  createBooking(uname:string, uemail:string, uphonumber:string, facilities:string, startdateandtime:string, enddateandtime:string, no_of_participants:string, trainner: string, membershipno:string) {
+    this.authService.createBooking(uname, uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno).subscribe((response: any) => {
+    console.log(response);
+   });
   }
 }
+  // createNewBooking(){
+  //   this.authService.createBooking('Testing').subscribe((response: any) => {
+  //     console.log(response);
+  //   });
+  // }
 // implements OnInit
 //{
 
