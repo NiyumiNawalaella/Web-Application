@@ -15,6 +15,7 @@ import { FirstComponent } from './pages/first/first.component';
 import { AdminChatComponent } from './pages/admin-chat/admin-chat.component';
 import { UserChatComponent } from './pages/user-chat/user-chat.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 import { first } from 'rxjs-compat/operator/first';
 import { HttpClientModule } from '@angular/common/http';
 import { SecondComponent } from './second/second.component';
@@ -45,7 +46,8 @@ const routes: Routes = [
   {path: 'user_chat', component:UserChatComponent},
   {path: 'chat', component:ChatComponent},
   {path: 'first', component:FirstComponent},
-  {path: 'second', component:SecondComponent}
+  {path: 'second', component:SecondComponent},
+  {path: 'payment', component:PaymentComponent}
   // { path: 'first', redirectTo: 'our_facilities', pathMatch: 'full' },
   // { path: 'our_facilities', component: HomeComponent },
   // { path: '**', redirectTo: 'our_facilities' }

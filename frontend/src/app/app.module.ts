@@ -52,6 +52,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     UserChatComponent,
     ChatComponent,
     SecondComponent,
+    PaymentComponent,
   ],
   imports: [ BrowserModule, AppRoutingModule,
     BrowserAnimationsModule,
