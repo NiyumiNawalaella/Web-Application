@@ -1,30 +1,35 @@
 <!-- <mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
 <mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar> -->
 
-<div class="form-container">
+<div class="centered-content">
+  <div class="modal-box">
+<!-- <div class="form-container"> -->
   <form>
     <table>
     <tr>
-      <td><label></label><input type="text" matInput placeholder="Enter Your Name" name="username" class="type-1" required></td>
+      <td colspan="5"><label></label><input type="text" matInput placeholder="Enter Your Name" name="username" class="type-1" required></td>
   </tr>
   <tr>
-      <td><label></label><input type="email" matInput placeholder="Enter Your Email" name="email"  class="type-1" required></td>
+      <td colspan="5"><label></label><input type="email" matInput placeholder="Enter Your Email" name="email"  class="type-1" required></td>
   </tr>
   <tr>
-    <td><label></label><input  type="tel" matInput placeholder="Enter Your Phone Number" name="phnum"  class="type-1" required></td>
+    <td colspan="5"><label></label><input  type="tel" matInput placeholder="Enter Your Phone Number" name="phnum"  class="type-1" required></td>
   </tr>
   <tr>
 
     <td><label class="type-1">Select Which Facilities to Book</label></td>
-    <td><label></label><input type="radio" name="facilities" value="0" class="type-1">Tennis</td>
-    <td><label></label><input type="radio"  name="facilities" value="1" class="type-1">Swimming</td>
-    <td><label></label><input type="radio" name="facilities" value="2" class="type-1">Badminton</td>
+    <td><label></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="facilities" value="0" > &nbsp; Tennis</td>
+    <td><label></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="facilities" value="1"> &nbsp; Swimming</td>
+    <td><label></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="facilities" value="2">  &nbsp; Badminton</td>
 
   </tr>
   <tr>
     <td>
 
-      <label class="type-1"> Start Date and Time:</label><input  type="datetime" name="startdateandtime" matInput  class="type-1">
+      <label class="type-1"> Start Date and Time:</label>
+      </td>
+      <td colspan="3">
+        <input  type="datetime-local" name="startdateandtime" matInput  class="type-1">
       <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker> -->
 
@@ -33,7 +38,10 @@
   <tr>
     <td>
 
-      <label class="type-1"> End Date and Time:</label><input  type="datetime" name="enddateandtime" matInput  class="type-1">
+      <label class="type-1"> End Date and Time:</label>
+      </td>
+      <td colspan="3">
+        <input  type="datetime-local" name="enddateandtime" matInput  class="type-1">
       <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker> -->
 
@@ -41,19 +49,24 @@
   </tr>
   <tr>
 
-    <td><label class="type-1">Number of Participants: </label><input type="number" name="num_of_participants"  class="type-1"></td>
+    <td><label class="type-1">Number of Participants: </label>
+      </td>
+      <td colspan="3"><input type="number" name="num_of_participants"  class="type-1">
+      </td>
 
   </tr>
   <tr>
 
     <td><label class="type-1">Trainner Required: </label></td>
-    <td><input type="radio" name="assitancerequirement" value="0" class="type-1">Yes</td>
-      <td><input type="radio" name="assitancerequirement" value="1" class="type-1">No</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="assitancerequirement" value="0">  &nbsp; Yes</td>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="assitancerequirement" value="1">  &nbsp; No</td>
 
   </tr>
   <tr>
 
-    <td><label>Membership Number: </label><input type="text" name="membershipno" matInput placeholder="(optional)"  class="type-1"></td>
+    <td><label class="type-1">Membership Number: </label></td>
+    <td colspan="3"><input type="text" name="membershipno" matInput placeholder="(optional)"  class="type-1">
+    </td>
 
   </tr>
   <tr>
@@ -162,8 +175,9 @@
   <td><label>Available: </label><input  class="type-1"></td>
 </tr> -->
 <tr>
-  <td><button mat-raised-button type="reset" name="cancelbtn" class="cancelbtn">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a ><button (click)="createNewBooking()" type="submit" name="nextbtn" class="nextbtn">Submit</button></a>
+  <td class="center" colspan="2"><button mat-raised-button type="reset" name="cancelbtn" class="cancelbtn">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  <td class="center" colspan="2">
+    <a><button mat-raised-button (click)="createNewBooking()" type="submit" name="nextbtn" class="nextbtn">Submit</button></a>
   </td>
   </tr>
 <!-- <tr>
@@ -174,3 +188,5 @@
   </table>
 </form>
 </div>
+</div>
+<!-- </div> -->

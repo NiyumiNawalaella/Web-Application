@@ -1,13 +1,28 @@
+.model-box
+{
+  min-height: 200px;
+  width: 100%;
+  max-width: 500px;
+  background: white;
+}
+/*
 .form-container
 {
   margin-top: 50px;
   max-width: 350px;
-}
+} */
 table tr td
 {
-  border: solid;
+  border: solid grey;
   width: 800px;
   height: 100%;
+  font-size: 1.5vw;
+  color: white;
+
+}
+.center
+{
+  text-align: center;
 }
 form
 {
@@ -24,6 +39,9 @@ form
 label
 {
   display: block;
+  color: white;
+  border: none;
+
 }
 select
 {
@@ -41,7 +59,7 @@ select
   border-radius:10px;
   border: 1px solid #eee;
   transition: .3s border-color;
-  font-size: 1vw;
+  font-size: 1.5vw;
 }
 .type-1:hover
 {
@@ -49,10 +67,10 @@ select
 }
 button
 {
-  width: 10vw;
-  min-height: 3vw;
+  width: 15vw;
+  min-height: 5vw;
   /* height: ; */
-  font-size: 1vw;
+  font-size: 1.5vw;
   border-radius: 50px;
 }
 
