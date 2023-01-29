@@ -1,9 +1,20 @@
 <!-- <form id="myform" (ngSubmit)="loginUser($event)"> -->
+  <div class="centered-content">
+    <div class="modal-box">
   <form id="myform">
-  <input type="email" placeholder="Email Address" id="useremail">
-  <input type="password" placeholder="Password" id="userpassword">
-
-<input type="submit" routerLink="" value="Enter">
-
+  <table>
+    <tr>
+  <td colspan="2"><input type="email" placeholder="Email Address" id="useremail" class="type-1"></td>
+  </tr>
+  <tr>
+  <td colspan="2"><input type="password" placeholder="Password" id="userpassword" class="type-1"></td>
+  </tr>
+  <tr>
+    <td class="center"><input mat-raised-button class="cancel" type="reset" value="Cancel"></td>
+<td class="center"><input mat-raised-button class="enter" type="submit" routerLink="" value="Enter"></td>
+</tr>
+</table>
 </form>
+</div>
+</div>
 <!-- /user_account -->

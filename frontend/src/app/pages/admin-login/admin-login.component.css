@@ -1,4 +1,86 @@
-#myform
+/* #myform
 {
   margin-top: 30%;
+} */
+.model-box
+{
+  min-height: 200px;
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  padding: auto;
+}
+table tr td
+{
+  border: solid grey;
+  width: 900px;
+  height: 100%;
+  font-size: 1.5vw;
+  color: white;
+
+}
+.center
+{
+  text-align: center;
+}
+form
+{
+  max-width: 70%;
+  margin: 15rem auto;
+  margin-right: 5rem auto;
+  border: 2px solid red;
+  padding: 2rem;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+label
+{
+  display: block;
+  color: white;
+  border: none;
+
+}
+.type-1
+{
+  display:block;
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  border-radius:10px;
+  border: 1px solid #eee;
+  transition: .3s border-color;
+  font-size: 1.5vw;
+}
+.type-1:hover
+{
+  border: 1px solid #aaa;
+}
+
+.enter
+{
+  width: 10vw;
+  min-height: 4vw;
+  /* height: ; */
+  font-size: 1.5vw;
+  border-radius: 50px;
+}
+.enter:hover
+{
+  background: gray;
+  color: white;
+}
+.cancel
+{
+  width: 10vw;
+  min-height: 4vw;
+  /* height: ; */
+  font-size: 1.5vw;
+  border-radius: 50px;
+}
+.cancel:hover
+{
+  background: rgb(204, 89, 89);
+  color: white;
 }

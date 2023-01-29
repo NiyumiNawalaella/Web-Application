@@ -1,8 +1,26 @@
-<form id="myform">
-  <input type="email" placeholder="Email Address">
-  <input type="number" placeholder="TelePhone Number">
-  <input type="password" placeholder="Password">
-  <input type="password" placeholder="Confirmed Password">
-<input type="submit" routerLink="/user_account" value="Enter">
 
+<div class="centered-content">
+  <div class="modal-box">
+<form id="myform">
+<table>
+  <tr>
+<td colspan="2"> <input type="email" placeholder="Email Address" class="type-1"></td>
+</tr>
+<tr>
+<td colspan="2">  <input type="tel" placeholder="Telephone Number" class="type-1"></td>
+</tr>
+<tr>
+  <td colspan="2">  <input type="password" placeholder="Password" class="type-1"></td>
+  </tr>
+  <tr>
+    <td colspan="2">  <input type="password" placeholder="Confirmed Password" class="type-1"></td>
+    </tr>
+<tr>
+  <td class="center"><input mat-raised-button class="cancel" type="reset" value="Cancel"></td>
+<td class="center"><input mat-raised-button class="enter" type="submit" routerLink="/user_account" value="Enter"></td>
+</tr>
+</table>
 </form>
+</div>
+</div>
+
