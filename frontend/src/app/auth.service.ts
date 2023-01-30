@@ -20,11 +20,21 @@ export class AuthService {
      getBookings() {
       return this.webRequestService.get('bookings');
      }
+
+  createTestimonial(email: string, comment: string) {
+    //sending a web request to create a testimonials
+    return this.webRequestService.post('testimonials', {email, comment});
+  }
+  getTestimonials()
+    {
+      return this.webRequestService.get('testimonials');
+    }
+}
   // createBooking(title:string) {
   //   //sending a web request to create a booking
   //   return this.webRequestService.post('bookings', {title});
   //  }
-}
+
   // loggedInStatus = false
   // constructor(private http: HttpClient) { }
 

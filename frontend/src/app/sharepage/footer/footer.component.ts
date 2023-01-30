@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 // import { NgForm } from '@angular/forms';
 
 @Component({
@@ -6,13 +7,21 @@ import { Component } from '@angular/core';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
   // addemail = "";
   // addtestimonials = "";
   // @Output() postCreated = new EventEmitter<Post>();
-  onAddTestimonials()
-  {
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit()  {
+
+  }
+
+  createTestimonial(email: string, comment:string){
+    this.authService.createTestimonial(email, comment).subscribe((response: any) => {
     alert("Your Feedback has Been Sent and Will be Reviewed.");
-    // s
+    console.log(response);
+    });
   }
 }

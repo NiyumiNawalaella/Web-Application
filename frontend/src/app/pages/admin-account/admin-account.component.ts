@@ -11,6 +11,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class AdminAccountComponent implements OnInit {
 
   bookings: any;
+  testimonials: any;
   constructor(private authService: AuthService, private route: ActivatedRoute){
 
   }
@@ -24,7 +25,10 @@ export class AdminAccountComponent implements OnInit {
     )
       this.authService.getBookings().subscribe((bookings:any) => {
       this.bookings = bookings;
-    })
+    });
+    this.authService.getTestimonials().subscribe((testimonials:any) => {
+      this.testimonials = testimonials;
+    });
 
   }
 }

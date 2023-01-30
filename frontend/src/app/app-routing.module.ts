@@ -49,9 +49,12 @@ const routes: Routes = [
   {path: 'second', component:SecondComponent},
   {path: 'payment', component:PaymentComponent},
   {path: 'admin_account', redirectTo: '/bookings', pathMatch: 'full'},
+  {path: 'admin_account', redirectTo: '/testimonials', pathMatch: 'full'},
   //{path: '', redirectTo:'lists', pathMatch: 'full'}
   {path: 'bookings', component:AdminAccountComponent},
-  {path: 'bookings/:bookingId', component:AdminAccountComponent}
+  {path: 'bookings/:bookingId', component:AdminAccountComponent},
+  {path: 'testimonials', component:AdminAccountComponent},
+  {path: 'testimonials/:testimonialId', component:AdminAccountComponent},
   // { path: 'first', redirectTo: 'our_facilities', pathMatch: 'full' },
   // { path: 'our_facilities', component: HomeComponent },
   // { path: '**', redirectTo: 'our_facilities' }

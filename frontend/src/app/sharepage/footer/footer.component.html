@@ -12,11 +12,11 @@
       <div class="col-lg-5">
           <h1>TESTIMONIALS</h1><br>
           <form>
-              <input id="addemail" type="text" placeholder="Your Email Address" required>
+              <input #testimonialEmailInput id="addemail" type="text" placeholder="Your Email Address" required>
               <br>
-              <textarea  id="addtestimonials" type="text" placeholder="Write a Comment Here..." required></textarea>
+              <textarea #testimonialCommentTextarea id="addtestimonials" type="text" placeholder="Write a Comment Here..." required></textarea>
               <br>
-              <button (click)="onAddTestimonials()" id="btnaddtestimonials" type="submit">Submit Now</button>
+              <button (click)="createTestimonial(testimonialEmailInput.value,testimonialCommentTextarea.value)" id="btnaddtestimonials" type="submit">Submit Now</button>
           </form>
       </div>
       <div class="col-lg-4">
