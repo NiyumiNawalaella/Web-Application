@@ -1,4 +1,10 @@
-
+<section id="intro">
+  <div id="content">
+  <div class="intro_heading">
+      <h3>All <span>Bookings</span></h3>
+  </div>
+</div>
+</section>
 <div class="modal-box">
   <div class="booking-container">
     <table>
@@ -31,8 +37,31 @@
     </table>
   </div>
 </div>
+<section id="intro">
+  <div id="content">
+  <div class="intro_heading">
+      <h3>All <span>Testimonials</span></h3>
+  </div>
+</div>
+</section>
+<div class="modal-box">
+  <div class="booking-container">
+    <table>
 
-<!-- <!-- <mat-spinner *ngIf="loading"></mat-spinner>
+      <tr>
+        <td class="color">Email</td>
+        <td class="color">Comment</td>
+      </tr>
+      <a *ngFor="let testimonial of testimonials">
+      <tr>
+      <td>{{testimonial.email}}</td>
+      <td>{{testimonial.comment}}</td>
+    </tr>
+    </a>
+    </table>
+  </div>
+</div>
+<!--  <mat-spinner *ngIf="loading"></mat-spinner>
 <mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
 <mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar> -->
 
