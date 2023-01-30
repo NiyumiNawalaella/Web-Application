@@ -1,10 +1,55 @@
-#btn
+#intro .intro_heading
+{
+    width: 100%;
+    color: whitesmoke;
+    text-align: center;
+    /* border: solid; */
+    padding: 30px;
+    padding-left: 25%;
+}
+#intro .intro_heading h3
+{
+  padding-top: 15%;
+    font-size: 3em;
+    font-weight: bolder;
+    padding-bottom: 50px;
+    border-bottom: 3px solid #222;
+    max-width: 68%;
+}
+#intro .intro_heading h3 span
+{
+    font-weight: 50;
+}
+#chat button
+{
+  margin-top: 10%;
+  margin-left: 80%;
+  width: 15%;
+  padding: 2rem;
+  font-size: 2rem;
+  border-radius: 40px;
+  background-color: transparent;
+}
+#chat button:hover
+{
+  background: linear-gradient(
+        45deg,
+        hsla(130, 85%, 52%, 0.5),
+        hsla(187, 88%, 45%, 0.5) 100%);
+}
+#chat button a
+{
+  color: white;
+  text-decoration: none;
+}
+
+/* #btn
 {
   /* top: 40%;
-  left: 7%; */
+  left: 7%;
   transform: translate(90%,70%);
   margin-block-start: 20%;
-  /* padding-top: 30%; */
+  /* padding-top: 30%;
   font-size: 2vw;
   position:absolute;
 }
@@ -20,4 +65,4 @@ a:hover
 {
   background-color: white;
   color: black;
-}
+} */
