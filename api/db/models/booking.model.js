@@ -58,7 +58,7 @@ const BookingSchema = new mongoose.Schema({
     }, 
     membershipno: {
         type: String,
-        required: true,
+        required: false,
         minlength: 1,
         trim: true
     }

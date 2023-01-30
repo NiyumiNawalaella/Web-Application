@@ -186,6 +186,7 @@
   <td class="center" colspan="2"><button mat-raised-button type="reset" name="cancelbtn" class="cancelbtn">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
   <td class="center" colspan="2">
     <a><button mat-raised-button (click)="createBooking(bookingUnameInput.value, bookingUemailInput.value, bookingUphonumberInput.value, bookingFacilitiesInput.value, bookingStartdateandtimeInput.value, bookingEnddateandtimeInput.value, bookingNo_of_participantsInput.value, bookingTrainnerInput.value, bookingMembershipnoInput.value)" type="submit" name="nextbtn" class="nextbtn" [routerLink]="['/payment']" routerLinkActive="router-link-active" >Submit</button></a>
+    <!-- <a [routerLink]="['/bookings', 'bookingId']"></a> -->
   </td>
   </tr>
 <!-- <tr>

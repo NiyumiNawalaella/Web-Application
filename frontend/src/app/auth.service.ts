@@ -29,6 +29,10 @@ export class AuthService {
     {
       return this.webRequestService.get('testimonials');
     }
+
+    getBookingsList(bookingId: string) {
+      return this.webRequestService.get(`bookings/${bookingId}/bookingslist`)
+    }
 }
   // createBooking(title:string) {
   //   //sending a web request to create a booking
