@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: 'our_facilities', component:OurFacilitiesComponent},
   {path: 'booking', component:BookingComponent},
   {path: 'bookingsecond', component:BookingsecondComponent},
-  {path: 'admin_account', component:AdminAccountComponent}, //appointment-list
+  // {path: 'admin_account', component:AdminAccountComponent}, //appointment-list
   {path: 'admin_login', component:AdminLoginComponent, canActivate: [AuthGuard]},
   {path: 'admin_chart', component:AdminChatComponent},
   {path: 'user_account', component:UserAccountComponent},
@@ -47,10 +47,11 @@ const routes: Routes = [
   {path: 'chat', component:ChatComponent},
   {path: 'first', component:FirstComponent},
   {path: 'second', component:SecondComponent},
-  {path: 'payment', redirectTo: '/bookings', pathMatch: 'full'},
+  {path: 'payment', component:PaymentComponent},
+  {path: 'admin_account', redirectTo: '/bookings', pathMatch: 'full'},
   //{path: '', redirectTo:'lists', pathMatch: 'full'}
-  {path: 'bookings', component:PaymentComponent},
-  {path: 'bookings/:bookingId', component:PaymentComponent}
+  {path: 'bookings', component:AdminAccountComponent},
+  {path: 'bookings/:bookingId', component:AdminAccountComponent}
   // { path: 'first', redirectTo: 'our_facilities', pathMatch: 'full' },
   // { path: 'our_facilities', component: HomeComponent },
   // { path: '**', redirectTo: 'our_facilities' }

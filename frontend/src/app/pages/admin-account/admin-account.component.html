@@ -1,11 +1,44 @@
-<!-- <mat-spinner *ngIf="loading"></mat-spinner>
+<div class="modal-box">
+  <div class="booking-container">
+    <table>
+
+      <tr>
+        <td class="color">Name</td>
+        <td class="color">Email Address</td>
+        <td class="color">Phone Number</td>
+        <td class="color">Which Facilities to Book</td>
+        <td class="color">Start Date and Time</td>
+        <td class="color">End Date and Time</td>
+        <td class="color">Number of Participants</td>
+        <td class="color">Trainner Required</td>
+        <td class="color">Membership Number</td>
+      </tr>
+      <a *ngFor="let booking of bookings">
+      <tr>
+      <td>{{booking.uname}}</td>
+      <td>{{booking.uemail}}</td>
+      <td>{{booking.uphonumber}}</td>
+      <td>{{booking.facilities}}</td>
+      <td>{{booking.startdateandtime}}</td>
+      <td>{{booking.enddateandtime}}</td>
+      <td>{{booking.no_of_participants}}</td>
+      <td>{{booking.trainner}}</td>
+      <td>{{booking.membershipno}}</td>
+
+    </tr>
+    </a>
+    </table>
+  </div>
+</div>
+
+<!-- <!-- <mat-spinner *ngIf="loading"></mat-spinner>
 <mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
 <mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar> -->
 
 <!-- <div *ngIf="!loading && !loading"> -->
-  <div>
+  <!-- <div> -->
   <!-- <table mat-table [dataSource]="bookings" class="mat-elevation-z8"> -->
-    <table class="mat-elevation-z8">
+    <!-- <table class="mat-elevation-z8">
     <ng-container matColumnDef="username">
       <th mat-header-cell *matHeaderCellDef>Customer Name</th>
       <td mat-cell *matCellDef="let booking"> {{ booking.username }}</td>
@@ -45,13 +78,13 @@
     <ng-container matColumnDef="cancel">
       <th mat-header-cell *matHeaderCellDef>Cancel</th>
       <td mat-cell *matCellDef="let booking">
-        <!-- <button (click)="cancelBooking(booking._id)" mat-raised-button color="warn">Cancel</button> -->
-        <button  mat-raised-button color="warn">Cancel</button>
-      </td>
-    </ng-container>
+         <button (click)="cancelBooking(booking._id)" mat-raised-button color="warn">Cancel</button> -->
+        <!-- <button  mat-raised-button color="warn">Cancel</button> -->
+      <!-- </td> -->
+    <!-- </ng-container> -->
     <!-- <tr mat-header-row *matHeaderRowDef="columns"></tr> -->
     <!-- <tr mat-row *matRowDef="let bookings; columns: columns"></tr> -->
-    <tr mat-header-row></tr>
-    <tr></tr>
-  </table>
-</div>
+    <!-- <tr mat-header-row></tr> -->
+    <!-- <tr></tr> -->
+  <!-- </table> -->
+<!-- </div> s -->
