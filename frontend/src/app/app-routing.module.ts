@@ -39,7 +39,7 @@ const routes: Routes = [
   {path: 'bookingsecond', component:BookingsecondComponent},
   // {path: 'admin_account', component:AdminAccountComponent}, //appointment-list
   {path: 'admin_login', component:AdminLoginComponent, canActivate: [AuthGuard]},
-  {path: 'admin_chart', component:AdminChatComponent},
+  {path: 'admin_chat', component:AdminChatComponent},
   {path: 'user_account', component:UserAccountComponent},
   {path: 'user_login', component:UserLoginComponent},
   {path: 'user_register', component:UserRegisterComponent},
