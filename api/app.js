@@ -6,7 +6,7 @@ const {mongoose} = require('./db/mongoose');
 const bodyParser = require('body-parser');
 
 //Load in the mongoose models
-const { Booking, BookingList } = require('./db/models');
+const { Booking, BookingList, Testimonial } = require('./db/models');
 
 // Load middleware
 app.use(bodyParser.json());
@@ -136,6 +136,40 @@ app.delete('/bookings/:bookingId/bookinglists/:bookinglistId', (req,res) => {
         _BookingId: req.params.bookingId
     }).then((removedBookingListDoc) => {
         res.send(removedBookingListDoc);
+    })
+});
+
+// ROUTE HANDLERS
+
+//TESTIMONIALS ROUTES
+
+// GET /testimonials
+//Purpose: Get all testimonials
+
+app.get('/testimonials', (req, res) => {
+    //to return an array of all the testimonials in the database
+    Testimonial.find({}).then((testimonials) => {
+        res.send(testimonials);
+    });
+});
+
+// POST /testimonials
+//Purpose: Create a testimonials
+
+app.post('/testimonials', (req, res) => {
+    //to create a new testimonial and return the new testimonial document back to the user (which includes the id)
+    //The testimonials information (fields) will be passed in via the JSON request body.
+
+    let email = req.body.email;
+    let comment = req.body.comment;
+
+    let newTestimonial = new Testimonial({
+        email,
+        comment
+    });
+    newTestimonial.save().then((testimonialDoc) => {
+        //the full testimonial document is returned (incl. id)
+        res.send(testimonialDoc);
     })
 });
 
