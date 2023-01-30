@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 const _ = require('lodash');
+const jwt = require('jsonwebtoken');
+
+//JWT Vault
+const jwtSecret = "ifiej0r984938039ergughe8eruw9r0ueeghhgrr9e88e0e0fhe9gerf09erwf";
 
 const UserSchema = new mongoose.Schema({
     email: {
@@ -40,5 +44,8 @@ UserSchema.methods.generateAccessAuthToken = function() {
     return new Promise((resolve, reject) => {
 
         //Create the JSON Web Token and return that
+        jwt.sign({_id: user._id.toHexString() }, jwtSecret, { expiresIn: "15m"}, (err, token) =>{
+            
+        })
     })
 }
