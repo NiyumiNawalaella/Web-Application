@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class PaymentComponent implements OnInit {
 
-  // bookings: any[];
+  bookings: any;
   constructor(private authService: AuthService, private route: ActivatedRoute){
 
   }
@@ -21,9 +21,9 @@ export class PaymentComponent implements OnInit {
         console.log(params);
       }
     )
+      this.authService.getBookings().subscribe((bookings:any) => {
+      this.bookings = bookings;
+    })
 
-    // this.authService.getBookings().subscribe((bookings:any[]) => {
-    //   this.bookings = bookings;
-    // })
   }
 }

@@ -47,9 +47,9 @@ const routes: Routes = [
   {path: 'chat', component:ChatComponent},
   {path: 'first', component:FirstComponent},
   {path: 'second', component:SecondComponent},
-  {path: 'payment', component:PaymentComponent},
+  {path: 'payment', redirectTo: '/bookings', pathMatch: 'full'},
   //{path: '', redirectTo:'lists', pathMatch: 'full'}
-  {path: 'bookings/', component:PaymentComponent},
+  {path: 'bookings', component:PaymentComponent},
   {path: 'bookings/:bookingId', component:PaymentComponent}
   // { path: 'first', redirectTo: 'our_facilities', pathMatch: 'full' },
   // { path: 'our_facilities', component: HomeComponent },
