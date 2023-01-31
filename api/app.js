@@ -179,8 +179,20 @@ app.delete('/bookings/:id',(req, res) => {
         _id: req.params.id
     }).then((removedBookingDoc) =>{
         res.send(removedBookingDoc);
+
     })
 });
+app.delete('/booking/:id',(req, res) => {
+    Booking.findOneAndRemove({
+        _id: req.params.id
+    }).then((removedBookingDoc) =>{
+        res.send(removedBookingDoc);
+
+        //delete all the booking that are in the deleted bookings
+        deleteBookingFromBookings(removedBookingDoc._id);
+    })
+});
+
 
 // app.get('/bookings/:bookingId/bookinglists', (req,res) => {
 // //getting all the bookings list to account of admin to view.
@@ -340,6 +352,15 @@ app.get('/users/me/access-token', verifySession, (req,res) => {
         res.send(400).send(e);
     });
 })
+
+//HELPER METHODS
+let deleteBookingFromBookings = () => {
+    Booking.deleteMany({
+        _bookingId
+    }).then(() => {
+        console.log("Booking from " +_bookingId+ " were deleted!");
+    })
+}
 
 app.listen(3000,() => {
     console.log("Server is listening on port 3000");
