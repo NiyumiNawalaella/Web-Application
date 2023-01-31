@@ -6,10 +6,10 @@ const BookingSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         required: true,
     },
-    _BookingId:{
-        type: mongoose.Types.ObjectId,
-        required: true,
-    },
+    // _bookingId:{
+    //     type: mongoose.Types.ObjectId,
+    //     required: true,
+    // },
     uname: {
         type: String,
         required: true,

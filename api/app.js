@@ -157,13 +157,41 @@ app.post('/bookings',(req, res) => {
         res.send(bookingDoc);
     })
 });
-
+app.post('/booking', authenticate, (req, res) => {
+  
+    let uname = req.body.uname;
+    let uemail = req.body.uemail;
+    let uphonumber = req.body.uphonumber;
+    let facilities = req.body.facilities; 
+    let startdateandtime = req.body.startdateandtime;
+    let enddateandtime = req.body.enddateandtime;
+    let no_of_participants = req.body.no_of_participants;
+    let trainner = req.body.trainner;
+    let membershipno = req.body.membershipno;
+    
+    let newBooking = new Booking({
+        _userId: req.user_id,
+        uname, uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno
+    });
+    newBooking.save().then((bookingDoc) => {
+        //the full list document is returned with the id.
+        res.send(bookingDoc);
+    })
+});
 // PATH /Bookings/:id
 // Purpose: Update a specified booking
 
 app.patch('/bookings/:id',(req, res) => {
     //To update the specified bookings (booking document with id in the URL) with the new values specified in the JSON body of the request in admin account page.
     Booking.findOneAndUpdate({ _id: req.params.id}, {
+        $set: req.body
+    }).then(() => {
+        res.sendStatus(200);
+    });
+});
+app.patch('/booking/:id',authenticate, (req, res) => {
+    //To update the specified bookings (booking document with id in the URL) with the new values specified in the JSON body of the request in admin account page.
+    Booking.findOneAndUpdate({ _id: req.params.id, _userId: req.user_id}, {
         $set: req.body
     }).then(() => {
         res.sendStatus(200);
@@ -182,14 +210,15 @@ app.delete('/bookings/:id',(req, res) => {
 
     })
 });
-app.delete('/booking/:id',(req, res) => {
+app.delete('/booking/:id',authenticate, (req, res) => {
     Booking.findOneAndRemove({
-        _id: req.params.id
+        _id: req.params.id,
+        _userId: req.user_id
     }).then((removedBookingDoc) =>{
         res.send(removedBookingDoc);
 
         //delete all the booking that are in the deleted bookings
-        deleteBookingFromBookings(removedBookingDoc._id);
+        // deleteBookingFromBookings(removedBookingDoc._id);
     })
 });
 
@@ -354,13 +383,13 @@ app.get('/users/me/access-token', verifySession, (req,res) => {
 })
 
 //HELPER METHODS
-let deleteBookingFromBookings = () => {
-    Booking.deleteMany({
-        _bookingId
-    }).then(() => {
-        console.log("Booking from " +_bookingId+ " were deleted!");
-    })
-}
+// let deleteBookingFromBookings = (_bookingId) => {
+//     Booking.deleteMany({
+//         _bookingId
+//     }).then(() => {
+//         console.log("Booking from " +_bookingId+ " were deleted!");
+//     });
+// }
 
 app.listen(3000,() => {
     console.log("Server is listening on port 3000");
