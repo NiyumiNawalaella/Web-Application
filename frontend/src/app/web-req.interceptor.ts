@@ -22,7 +22,7 @@ export class WebReqInterceptor implements HttpInterceptor {
 
         if(error.status === 401) {
           //401 error so it is unauthorized
-          
+
           //refresh the access token
           console.log("test");
 

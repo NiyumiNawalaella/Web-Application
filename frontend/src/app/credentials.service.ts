@@ -34,7 +34,7 @@ export class CredentialsService {
   }
   logout(){
     this.removeSession();
-    
+
     this.router.navigate(['/first']);
   }
   getAccessToken(){
