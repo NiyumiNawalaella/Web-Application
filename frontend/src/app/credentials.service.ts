@@ -34,6 +34,8 @@ export class CredentialsService {
   }
   logout(){
     this.removeSession();
+    
+    this.router.navigateByUrl('/first');
   }
   getAccessToken(){
     return localStorage.getItem('x-access-item');
