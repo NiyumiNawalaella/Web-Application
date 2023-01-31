@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 //Load in the mongoose models
 const { Booking, BookingList, Testimonial, User } = require('./db/models');
 
+const jwt = require('jsonwebtoken');
+
 //MIDDLEWARE
 
 
@@ -25,6 +27,25 @@ app.use(function(req, res, next) {
 
     next();
   });
+
+  // check whether the request has a valid JWT access token
+  let authenticate = (req, res, next) => {
+    let token = req.header('x-access-token');
+
+    //verify the JWT
+    jwt.verify(token,User.getJWTSecret(), (err, decoded) => {
+        if(err) {
+            //there was an error
+            //jwt is invalid - * Do NOT AUTHENTICATE *
+            res.status(401).send(err);
+        } else {
+            //jwt is valid
+            req.user_id = decoded._id;
+            next();
+        }
+    });
+  }
+
 //   let accessToken =req.header('x-access-token');
 
   //VERIFY REFRESH TOKEN MIDDLEWARE (which will be verifying the session)
@@ -93,7 +114,7 @@ app.use(function(req, res, next) {
 
 // ******************************* lists = bookings 
 app.get('/bookings',(req, res) => {
-    //To return an array of all the lists in the database
+    //To return an array of all the lists in the database to admin account
     Booking.find({}).then((Bookings) => {
         res.send(Bookings);
     }).catch((e) =>  {
@@ -101,6 +122,16 @@ app.get('/bookings',(req, res) => {
     });
 })
 
+app.get('/booking',authenticate, (req, res) => {
+    //To return an array of all the lists in the database to user account and payment page that belongs to the authenticated user
+    Booking.find({
+        _userId: req.user_id
+    }).then((Bookings) => {
+        res.send(Bookings);
+    }).catch((e) =>  {
+        res.send(e);
+    });
+})
 // POST /Bookings
 // Purpose: Create a booking
 
@@ -151,58 +182,58 @@ app.delete('/bookings/:id',(req, res) => {
     })
 });
 
-app.get('/bookings/:bookingId/bookinglists', (req,res) => {
-//getting all the bookings list to account of admin to view.
-BookingList.find({
-    _BookingId: req.params.bookingId
-}).then((bookinglists) => {
-    res.send(bookinglists);
-})
-});
+// app.get('/bookings/:bookingId/bookinglists', (req,res) => {
+// //getting all the bookings list to account of admin to view.
+// BookingList.find({
+//     _BookingId: req.params.bookingId
+// }).then((bookinglists) => {
+//     res.send(bookinglists);
+// })
+// });
 
-app.get('/bookings/:bookingId/bookinglists/:bookinglistId', (req, res) => {
-    //specified to get one document by ID.
-    BookingList.findOne({
-        _id: req.params.bookinglistId,
-        _BookingId: req.params.bookingId
-    }).then((bookinglist) => {
-        res.send(bookinglist);
-    })
-})
+// app.get('/bookings/:bookingId/bookinglists/:bookinglistId', (req, res) => {
+//     //specified to get one document by ID.
+//     BookingList.findOne({
+//         _id: req.params.bookinglistId,
+//         _BookingId: req.params.bookingId
+//     }).then((bookinglist) => {
+//         res.send(bookinglist);
+//     })
+// })
 
-app.post('/bookings/:bookingId/bookinglists', (req, res) => {
-    //posting all the bookings list to account of admin to view.
-    let newBookingList = new BookingList({
-        title: req.body.title,
-        _BookingId: req.params.bookingId
-    });
-    newBookingList.save().then((newBookingListDoc) => {
-        res.send(newBookingListDoc);
-    })
-});
+// app.post('/bookings/:bookingId/bookinglists', (req, res) => {
+//     //posting all the bookings list to account of admin to view.
+//     let newBookingList = new BookingList({
+//         title: req.body.title,
+//         _BookingId: req.params.bookingId
+//     });
+//     newBookingList.save().then((newBookingListDoc) => {
+//         res.send(newBookingListDoc);
+//     })
+// });
 
-app.patch('/bookings/:bookingId/bookinglists/:bookinglistId', (req,res) => {
-    // updating an existing booking from the booking list in the account of the admin
-    BookingList.findOneAndUpdate({
-        _id: req.params.bookinglistId,
-        _BookingId: req.params.bookingId
-    }, {
-        $set: req.body
-    }
-    ).then(() => {
-        res.sendStatus(200);
-    })
-});
+// app.patch('/bookings/:bookingId/bookinglists/:bookinglistId', (req,res) => {
+//     // updating an existing booking from the booking list in the account of the admin
+//     BookingList.findOneAndUpdate({
+//         _id: req.params.bookinglistId,
+//         _BookingId: req.params.bookingId
+//     }, {
+//         $set: req.body
+//     }
+//     ).then(() => {
+//         res.sendStatus(200);
+//     })
+// });
 
-app.delete('/bookings/:bookingId/bookinglists/:bookinglistId', (req,res) => {
-    // deleting an existing booking from the booking list in the account of the admin
-    BookingList.findOneAndRemove({
-        _id: req.params.bookinglistId,
-        _BookingId: req.params.bookingId
-    }).then((removedBookingListDoc) => {
-        res.send(removedBookingListDoc);
-    })
-});
+// app.delete('/bookings/:bookingId/bookinglists/:bookinglistId', (req,res) => {
+//     // deleting an existing booking from the booking list in the account of the admin
+//     BookingList.findOneAndRemove({
+//         _id: req.params.bookinglistId,
+//         _BookingId: req.params.bookingId
+//     }).then((removedBookingListDoc) => {
+//         res.send(removedBookingListDoc);
+//     })
+// });
 
 // ROUTE HANDLERS
 
