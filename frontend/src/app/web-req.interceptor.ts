@@ -21,9 +21,14 @@ export class WebReqInterceptor implements HttpInterceptor {
         console.log(error);
 
         if(error.status === 401) {
-          //401
+          //401 error so it is unauthorized
+          
+          //refresh the access token
+          console.log("test");
+
+          this.credentialsService.logout();
         }
-        return throwError(error);
+        return throwError(() => error);
       })
     )
   }

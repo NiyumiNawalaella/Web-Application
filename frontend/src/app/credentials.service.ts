@@ -23,22 +23,22 @@ export class CredentialsService {
   }
   private setSession(userId: string, accessToken: any, refreshToken: any) {
     localStorage.setItem('user-id', userId);
-    localStorage.setItem('access-token', accessToken);
+    localStorage.setItem('x-access-token', accessToken);
     // JSON.parse(localStorage.getItem('access-token') as string);
-    localStorage.setItem('refresh-token', refreshToken);
+    localStorage.setItem('x-refresh-token', refreshToken);
   }
   private removeSession() {
     localStorage.removeItem('user-id');
-    localStorage.removeItem('access-token');
-    localStorage.removeItem('refresh-token');
+    localStorage.removeItem('x-access-token');
+    localStorage.removeItem('x-refresh-token');
   }
   logout(){
     this.removeSession();
     
-    this.router.navigateByUrl('/first');
+    this.router.navigate(['/first']);
   }
   getAccessToken(){
-    return localStorage.getItem('x-access-item');
+    return localStorage.getItem('x-access-token');
   }
   getRefreshToken(){
     return localStorage.getItem('x-refresh-token');

@@ -11,8 +11,8 @@ declare var name : any
 })
 export class HomeComponent implements OnInit {
   ngOnInit(): void {
-    new name();
-    // new swiper();
+    // new name();
+    // // new swiper();
   }
 }
 

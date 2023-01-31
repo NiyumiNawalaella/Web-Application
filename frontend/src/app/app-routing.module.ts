@@ -16,7 +16,7 @@ import { AdminChatComponent } from './pages/admin-chat/admin-chat.component';
 import { UserChatComponent } from './pages/user-chat/user-chat.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { PaymentComponent } from './pages/payment/payment.component';
-import { first } from 'rxjs-compat/operator/first';
+// import { first } from 'rxjs-compat/operator/first';
 import { HttpClientModule } from '@angular/common/http';
 import { SecondComponent } from './second/second.component';
 
@@ -50,7 +50,7 @@ const routes: Routes = [
   {path: 'payment', component:PaymentComponent},
   {path: 'admin_account', redirectTo: '/bookings', pathMatch: 'full'},
   {path: 'admin_account', redirectTo: '/testimonials', pathMatch: 'full'},
-  //{path: '', redirectTo:'lists', pathMatch: 'full'}
+  // {path: '**', redirectTo:'/first', pathMatch: 'full'},
   {path: 'bookings', component:AdminAccountComponent},
   {path: 'bookings/:bookingId', component:BookingComponent},
   {path: 'testimonials', component:AdminAccountComponent},

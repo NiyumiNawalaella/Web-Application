@@ -4,8 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
-import { AuthService } from './auth.service';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+
 
 // import { AppMaterialModule } from './app.material.module';
 // import {MatToolbarModule} from '@angular/material/toolbar';
@@ -53,6 +53,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { WebReqInterceptor } from './web-req.interceptor';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,9 @@ import { PaymentComponent } from './pages/payment/payment.component';
     // MatToolbarModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
