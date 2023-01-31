@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { AuthService } from './auth.service';
-import { AuthGuard } from './auth.guard';
+
 // import { AppMaterialModule } from './app.material.module';
 // import {MatToolbarModule} from '@angular/material/toolbar';
 //************* */
