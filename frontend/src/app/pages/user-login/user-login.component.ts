@@ -1,5 +1,7 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../auth.service';
+import { CredentialsService } from 'src/app/credentials.service';
+// import { AuthService } from '../../auth.service';
 
 
 @Component({
@@ -9,13 +11,18 @@ import { AuthService } from '../../auth.service';
 })
 export class UserLoginComponent implements OnInit{
 
-  constructor(private Auth: AuthService)
+  constructor(private credentialsService: CredentialsService)
   {
 
   }
   ngOnInit()
   {
 
+  }
+  onLoginButtonClicked(email: string, password: string) {
+    this.credentialsService.userlogin(email, password).subscribe((res: HttpResponse<any>) => {
+      console.log(res);
+    });
   }
 
   // loginUser(event:any)
