@@ -8,15 +8,75 @@ const bodyParser = require('body-parser');
 //Load in the mongoose models
 const { Booking, BookingList, Testimonial, User } = require('./db/models');
 
+//MIDDLEWARE
+
+
 // Load middleware
 app.use(bodyParser.json());
 
 //CORS HEADERS MIDDLEWARE
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Methods", "GET, POST, HEAD, OPTIONS, PUT, PATCH, DELETE");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
+
+  //VERIFY REFRESH TOKEN MIDDLEWARE (which will be verifying the session)
+  let verifySession = (req, res, next) => {
+    //grab the refresh token from the request header
+    let refreshToken = req.header('x-refresh-token');
+
+    //grab the _id from the request header
+    let _id = req.header('_id');
+    
+    User.findByIdAndToken(_id, refreshToken).then((user) => {
+        if(!user)
+        {
+            //user couldn't be found
+            return Promise.reject({
+                'error': 'User not found. Make sure that the refresh token and user id are correct'
+            });
+        }
+
+        //if the code reaches here - the user was found
+        //therefore the refresh token exists in the database - but we still have to check if it has expired or not
+
+        req.user_id = user._id;
+        req.userObject = user;
+        req.refreshToken = refreshToken;
+
+        let isSessionValid = false;
+
+        user.sessions.forEach((session) => {
+            if(session.token === refreshToken)
+            {
+                //chech if the session has expired
+                if(User.hasRefreshTokenExpired(session.expiresAt) === false) 
+                {
+                    //refresh token has not expired
+                    isSessionValid = true;
+                }
+            }
+        });
+        if(isSessionValid)
+        {
+            //the session is valid - call next() to continue with processing this web request
+            next();
+        }
+        else
+        {
+            //the session is not valid
+            return Promise.reject({
+                'error': 'Refresh token has expired or the session is invalid'
+            })
+        }
+    }).catch((e) => {
+        res.status(401).send(e);
+    })
+  }
+
+  //END MIDDLEWARE
 
 
 // ROUTE HANDLERS
@@ -230,6 +290,18 @@ app.post('/users/login', (req, res) => {
         })
     }).catch((e) => {
         res.status(400).send(e);
+    });
+})
+
+//GET /users/me/access-token
+//Purpose: generates and return an access token
+
+app.get('/users/me/access-token', verifySession, (req,res) => {
+    //the user/caller is authenticated and the user _id and user object available'
+    req.userObject.generateAccessAuthToken().then((accessToken) => {
+        res.header('x-access-token', accessToken).send({accessToken});
+    }).catch((e) => {
+        res.send(400).send(e);
     });
 })
 
