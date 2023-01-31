@@ -6,7 +6,7 @@ const {mongoose} = require('./db/mongoose');
 const bodyParser = require('body-parser');
 
 //Load in the mongoose models
-const { Booking, BookingList, Testimonial } = require('./db/models');
+const { Booking, BookingList, Testimonial, User } = require('./db/models');
 
 // Load middleware
 app.use(bodyParser.json());
@@ -172,6 +172,66 @@ app.post('/testimonials', (req, res) => {
         res.send(testimonialDoc);
     })
 });
+
+//USER ROUTES
+
+//POST /users
+//Purpose: Sign Up
+
+app.post('/users', (req,res) => {
+    //User sign up
+
+    let body = req.body;
+    let newUser = new User(body);
+
+    newUser.save().then(() => {
+        return newUser.createSession();
+    }).then((refreshToken) => {
+        //Session created successfully - refreshToken returned
+        //now we generate an access auth token for the user
+
+        return newUser.generateAccessAuthToken().then((accessToken) => {
+            //access auth token generate successfully, now we return an object containing the auth tokens
+            return {accessToken, refreshToken}
+        });
+    }).then((authToken) => {
+        //Now we construct and send the response to the user with their auth tokens in the header and the user object in the body
+        res
+        .header('x-refresh-token', authToken.refreshToken)
+        .header('x-access-token', authToken.accessToken)
+        .send(newUser);
+    }).catch((e) =>{
+        res.status(400).send(e);
+    })
+})
+
+//POST /users/login
+//Purpose: Login
+
+app.post('/users/login', (req, res) => {
+    let email = req.body.email;
+    let password = req.body.password;
+
+    User.findByCredentials(email, password).then((user) => {
+        return user.createSession().then((refreshToken) => {
+            //Session created successfully - refreshToken returned.
+            //now we generate an access wuth token for the user
+
+            return user.generateAccessAuthToken().then((accessToken) => {
+                //access auth token generated successfully, now we return an object containing the auth tokens
+                return { accessToken, refreshToken}
+            });
+        }).then((authToken) => {
+            //Now we construct and send the response to the user with their auth tokens in the header and the user object in the body
+            res
+            .header('x-refresh-token', authToken.refreshToken)
+            .header('x-access-token', authToken.accessToken)
+            .send(user);
+        })
+    }).catch((e) => {
+        res.status(400).send(e);
+    });
+})
 
 app.listen(3000,() => {
     console.log("Server is listening on port 3000");
