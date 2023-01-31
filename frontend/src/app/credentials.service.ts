@@ -35,4 +35,13 @@ export class CredentialsService {
   logout(){
     this.removeSession();
   }
+  getAccessToken(){
+    return localStorage.getItem('x-access-item');
+  }
+  getRefreshToken(){
+    return localStorage.getItem('x-refresh-token');
+  }
+  setAccessToken(accessToken: string) {
+    localStorage.setItem('x-access-token', accessToken);
+  }
 }
