@@ -33,6 +33,8 @@ export class BookingComponent implements OnInit
     //Now navigation to /bookings/response._id
 
    });
+
+
   }
 }
   // createNewBooking(){

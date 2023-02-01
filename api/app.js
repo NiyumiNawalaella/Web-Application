@@ -122,7 +122,8 @@ app.get('/bookings',(req, res) => {
 })
 
 app.get('/booking',authenticate, (req, res) => {
-    //To return an array of all the lists in the database to user account and payment page that belongs to the authenticated user
+    //To return an array of all the lists in the database to user account and payment page 
+    //that belongs to the authenticated user
     Booking.find({
         _userId: req.user_id
     }).then((Booking) => {
