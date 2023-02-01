@@ -4,20 +4,14 @@
 <form id="myform">
 <table>
   <tr>
-<td colspan="2"> <input type="email" placeholder="Email Address" class="type-1"></td>
+<td colspan="2"> <input #SignupemailInput type="email" placeholder="Email Address" class="type-1"></td>
 </tr>
 <tr>
-<td colspan="2">  <input type="tel" placeholder="Telephone Number" class="type-1"></td>
-</tr>
-<tr>
-  <td colspan="2">  <input type="password" placeholder="Password" class="type-1"></td>
+  <td colspan="2">  <input #SignuppasswordInput type="password" placeholder="Password" class="type-1"></td>
   </tr>
-  <tr>
-    <td colspan="2">  <input type="password" placeholder="Confirmed Password" class="type-1"></td>
-    </tr>
 <tr>
   <td class="center"><input mat-raised-button class="cancel" type="reset" value="Cancel"></td>
-<td class="center"><input mat-raised-button class="enter" type="submit" routerLink="/user_account" value="Enter"></td>
+<td class="center"><input mat-raised-button class="enter" type="submit" routerLink="/user_account" (click)="onSignupButtonClicked(SignupemailInput.value, SignuppasswordInput.value)" value="Enter"></td>
 </tr>
 </table>
 </form>
