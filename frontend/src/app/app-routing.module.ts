@@ -4,7 +4,6 @@ import { BookingComponent } from './pages/booking/booking.component';
 import { HomeComponent } from './pages/home/home.component';
 import { OurFacilitiesComponent } from './pages/our-facilities/our-facilities.component';
 import { OurWhyComponent } from './pages/our-why/our-why.component';
-import { TheProcessComponent } from './pages/the-process/the-process.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
 import { AdminAccountComponent } from './pages/admin-account/admin-account.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
@@ -33,7 +32,6 @@ import { SecondComponent } from './second/second.component';
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'our_why', component:OurWhyComponent},
-  {path: 'the_process', component:TheProcessComponent},
   {path: 'our_facilities', component:OurFacilitiesComponent},
   {path: 'booking', component:BookingComponent},
   {path: 'bookingsecond', component:BookingsecondComponent},

@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './our-why.component.html',
   styleUrls: ['./our-why.component.css']
 })
+
 export class OurWhyComponent {
+
+  constructor() {}
 
 }

@@ -19,7 +19,6 @@ import { NavbarComponent } from './sharepage/navbar/navbar.component';
 import { FooterComponent } from './sharepage/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { OurWhyComponent } from './pages/our-why/our-why.component';
-import { TheProcessComponent } from './pages/the-process/the-process.component';
 import { OurFacilitiesComponent } from './pages/our-facilities/our-facilities.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { BookingsecondComponent } from './pages/bookingsecond/bookingsecond.component';
@@ -62,7 +61,6 @@ import { WebReqInterceptor } from './web-req.interceptor';
     FooterComponent,
     HomeComponent,
     OurWhyComponent,
-    TheProcessComponent,
     OurFacilitiesComponent,
     BookingComponent,
     BookingsecondComponent,
