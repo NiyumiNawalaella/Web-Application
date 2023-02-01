@@ -84,4 +84,30 @@ td
   color: white;
   text-decoration: none;
 }
-
+.top-bar
+{
+  display: flex;
+  flex-grow: 1;
+}
+ .update
+{
+  margin-top: 10%;
+  margin-left: 80%;
+  width: 100%;
+  padding: 2rem;
+  font-size: 2rem;
+  border-radius: 40px;
+  background-color: transparent;
+}
+ .update:hover
+{
+  background: linear-gradient(
+        45deg,
+        hsla(130, 85%, 52%, 0.5),
+        hsla(187, 88%, 45%, 0.5) 100%);
+}
+.update
+{
+  color: white;
+  text-decoration: none;
+}

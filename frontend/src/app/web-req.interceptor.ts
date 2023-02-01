@@ -1,6 +1,6 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { empty, Observable, throwError } from 'rxjs';
+import { empty, observable, Observable, Subject, throwError } from 'rxjs';
 import { CredentialsService } from './credentials.service';
 import { catchError, switchMap, tap } from 'rxjs/operators';
 
@@ -13,6 +13,8 @@ export class WebReqInterceptor implements HttpInterceptor {
 
   refreshingAccessToken: boolean = false;
 
+  accessTokenRefreshed: Subject<any> = new Subject();
+
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     //Handle the request
     request = this.addCredentialsHeader(request);
@@ -22,7 +24,7 @@ export class WebReqInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         console.log(error);
 
-        if(error.status === 401 && !this.refreshingAccessToken) {
+        if(error.status === 401) {
           //401 error so it is unauthorized
 
           //refresh the access token
@@ -44,7 +46,20 @@ export class WebReqInterceptor implements HttpInterceptor {
     )
   }
   refreshAccessToken(){
-    this.refreshingAccessToken = true;
+
+    if(this.refreshingAccessToken)
+    {
+      return new Observable(observer => {
+        this.accessTokenRefreshed.subscribe(()=> {
+          //this code will run when the access token has been refreshed
+          observer.next();
+          observer.complete();
+        })
+      })
+    }
+    else
+    {
+      this.refreshingAccessToken = true;
     //we want to call a method in the credentials service to send a request to refresh the access token
     return this.credentialsService.getNewAccessToken().pipe(
       //tap would just observe the response
@@ -53,6 +68,7 @@ export class WebReqInterceptor implements HttpInterceptor {
         console.log("Access Token Refreshed!");
       })
     )
+    }
   }
 
   addCredentialsHeader(request: HttpRequest<any>) {
