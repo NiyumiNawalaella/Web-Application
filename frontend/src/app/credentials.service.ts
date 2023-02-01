@@ -41,9 +41,27 @@ export class CredentialsService {
     return localStorage.getItem('x-access-token');
   }
   getRefreshToken(){
-    return localStorage.getItem('x-refresh-token');
+    return localStorage.getItem('x-refresh-token') ?? [];
   }
+  getUserId(){
+    return localStorage.getItem('user-id') ?? [];
+  }
+
   setAccessToken(accessToken: string) {
     localStorage.setItem('x-access-token', accessToken);
+  }
+
+  getNewAccessToken(){
+    return this.http.get(`${this.webService.ROOT_URL}/users/me/access-token`, {
+      headers: {
+        'x-refresh-token': this.getRefreshToken(),
+        '_id': this.getUserId()
+      },
+      observe: 'response'
+    }).pipe(
+      tap((res: HttpResponse<any>) => {
+        this.setAccessToken(res.headers.get('x-access-token')!) ;
+      })
+    )
   }
 }

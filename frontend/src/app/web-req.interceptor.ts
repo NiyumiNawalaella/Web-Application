@@ -1,8 +1,8 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { empty, Observable, throwError } from 'rxjs';
 import { CredentialsService } from './credentials.service';
-import { catchError } from 'rxjs/operators';
+import { catchError, switchMap, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,8 @@ import { catchError } from 'rxjs/operators';
 export class WebReqInterceptor implements HttpInterceptor {
 
   constructor(private credentialsService: CredentialsService) { }
+
+  refreshingAccessToken: boolean = false;
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     //Handle the request
@@ -20,15 +22,35 @@ export class WebReqInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         console.log(error);
 
-        if(error.status === 401) {
+        if(error.status === 401 && !this.refreshingAccessToken) {
           //401 error so it is unauthorized
 
           //refresh the access token
-          console.log("test");
-
-          this.credentialsService.logout();
+          return this.refreshAccessToken()
+          .pipe(
+            switchMap(() => {
+              request = this.addCredentialsHeader(request);
+              return next.handle(request);
+            }),
+            catchError((err: any) => {
+              console.log(err);
+              this.credentialsService.logout();
+              return empty();
+            })
+          )
         }
         return throwError(() => error);
+      })
+    )
+  }
+  refreshAccessToken(){
+    this.refreshingAccessToken = true;
+    //we want to call a method in the credentials service to send a request to refresh the access token
+    return this.credentialsService.getNewAccessToken().pipe(
+      //tap would just observe the response
+      tap(() => {
+        this.refreshingAccessToken = false;
+        console.log("Access Token Refreshed!");
       })
     )
   }
