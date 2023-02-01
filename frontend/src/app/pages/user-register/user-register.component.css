@@ -10,9 +10,10 @@
   background: white;
   padding: auto;
 }
+
 table tr td
 {
-  border: solid grey;
+  /* border: solid grey; */
   width: 900px;
   height: 100%;
   font-size: 1.5vw;
