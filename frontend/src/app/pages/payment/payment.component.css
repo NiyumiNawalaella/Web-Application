@@ -1,4 +1,18 @@
-table
+.model-box
+{
+  min-height: 200px;
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  padding-bottom: 50%;
+  border-radius: 5px;
+}
+.card
+{
+  margin-top: 30%;
+
+}
+/* table
 {
   font-size: 1vw;
   color: white;
@@ -33,11 +47,11 @@ td
   background: white;
   padding: auto;
   border-radius: 5px;
-}
-.color
+} */
+/* .color
 {
   font-weight: bold;
-  /* border-color: white; */
+  /* border-color: white; *
   background-color: black;
 }
 button
@@ -62,4 +76,4 @@ button a
   color: white;
   text-decoration: none;
 }
-
+ */
