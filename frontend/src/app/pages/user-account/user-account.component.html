@@ -10,3 +10,35 @@
     </div>
   </div>
   </section>
+  <div class="modal-box">
+    <div class="booking-container">
+      <table>
+
+        <tr>
+          <td class="color">Name</td>
+          <td class="color">Email Address</td>
+          <td class="color">Phone Number</td>
+          <td class="color">Which Facilities to Book</td>
+          <td class="color">Start Date and Time</td>
+          <td class="color">End Date and Time</td>
+          <td class="color">Number of Participants</td>
+          <td class="color">Trainner Required</td>
+          <td class="color">Membership Number</td>
+        </tr>
+        <a *ngFor="let bookings of booking">
+        <tr>
+        <td>{{bookings.uname}}</td>
+        <td>{{bookings.uemail}}</td>
+        <td>{{bookings.uphonumber}}</td>
+        <td>{{bookings.facilities}}</td>
+        <td>{{bookings.startdateandtime}}</td>
+        <td>{{bookings.enddateandtime}}</td>
+        <td>{{bookings.no_of_participants}}</td>
+        <td>{{bookings.trainner}}</td>
+        <td>{{bookings.membershipno}}</td>
+
+      </tr>
+      </a>
+      </table>
+    </div>
+  </div>

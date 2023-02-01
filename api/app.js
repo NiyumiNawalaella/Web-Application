@@ -6,7 +6,7 @@ const {mongoose} = require('./db/mongoose');
 const bodyParser = require('body-parser');
 
 //Load in the mongoose models
-const { Booking, BookingList, Testimonial, User } = require('./db/models');
+const { Booking, Bookings, Testimonial, User } = require('./db/models');
 
 const jwt = require('jsonwebtoken');
 
@@ -112,10 +112,9 @@ app.use(function(req, res, next) {
 // GET /Bookings
 // Purpose: Get all bookings 
 
-// ******************************* lists = bookings 
 app.get('/bookings',(req, res) => {
     //To return an array of all the lists in the database to admin account
-    Booking.find({}).then((Bookings) => {
+    Bookings.find({}).then((Bookings) => {
         res.send(Bookings);
     }).catch((e) =>  {
         res.send(e);
@@ -126,8 +125,8 @@ app.get('/booking',authenticate, (req, res) => {
     //To return an array of all the lists in the database to user account and payment page that belongs to the authenticated user
     Booking.find({
         _userId: req.user_id
-    }).then((Bookings) => {
-        res.send(Bookings);
+    }).then((Booking) => {
+        res.send(Booking);
     }).catch((e) =>  {
         res.send(e);
     });
@@ -139,7 +138,7 @@ app.post('/bookings',(req, res) => {
     //To create a new booking and reurn the new booking documnet back to the user(which includes the id)
     //and also all the bookings should be shown in admin account.
     //the booking information (fields) will be passed in via the JSON request body.
-    // let title = req.body.title;
+    // let user_id = req.body.user_id;
     let uname = req.body.uname;
     let uemail = req.body.uemail;
     let uphonumber = req.body.uphonumber;
@@ -149,12 +148,12 @@ app.post('/bookings',(req, res) => {
     let no_of_participants = req.body.no_of_participants;
     let trainner = req.body.trainner;
     let membershipno = req.body.membershipno;
-    let newBooking = new Booking({
+    let newBookings = new Bookings({
         uname, uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno
     });
-    newBooking.save().then((bookingDoc) => {
+    newBookings.save().then((bookingsDoc) => {
         //the full list document is returned with the id.
-        res.send(bookingDoc);
+        res.send(bookingsDoc);
     })
 });
 app.post('/booking', authenticate, (req, res) => {
@@ -183,7 +182,7 @@ app.post('/booking', authenticate, (req, res) => {
 
 app.patch('/bookings/:id',(req, res) => {
     //To update the specified bookings (booking document with id in the URL) with the new values specified in the JSON body of the request in admin account page.
-    Booking.findOneAndUpdate({ _id: req.params.id}, {
+    Bookings.findOneAndUpdate({ _id: req.params.id}, {
         $set: req.body
     }).then(() => {
         res.sendStatus(200);
@@ -203,10 +202,10 @@ app.patch('/booking/:id',authenticate, (req, res) => {
 
 app.delete('/bookings/:id',(req, res) => {
     //to delete the specified booking (document with id in the URL) from the admin account page.
-    Booking.findOneAndRemove({
+    Bookings.findOneAndRemove({
         _id: req.params.id
-    }).then((removedBookingDoc) =>{
-        res.send(removedBookingDoc);
+    }).then((removedBookingsDoc) =>{
+        res.send(removedBookingsDoc);
 
     })
 });

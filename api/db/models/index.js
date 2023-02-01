@@ -1,11 +1,10 @@
-const { Booking } = require('./booking.model');
-const { BookingList } = require('./booking.list.model');
+const { Booking, Bookings } = require('./booking.model');
 const { Testimonial } = require('./testimonial.model');
 const { User } = require('./user.model');
 
 module.exports = {
     Booking,
-    BookingList,
+    Bookings,
     Testimonial,
     User
 }

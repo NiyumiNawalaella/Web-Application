@@ -42,7 +42,42 @@
   color: white;
   text-decoration: none;
 }
+table
+{
+  font-size: 1vw;
+  color: white;
+  max-width: 90%;
+  margin: 15rem auto;
 
+  border: 2px solid red;
+  padding: 2rem;
+
+}
+tr
+{
+  text-align: center;
+  table-layout: fixed;
+  padding: 2rem;
+  min-width: 100%;
+border: solid;
+   display:inline-flex;
+  flex-direction:row;
+}
+td
+{
+   padding: 1rem;
+  border: solid;
+  width: 100% ;
+}
+.model-box
+{
+  min-height: 200px;
+  width: 100%;
+   max-width: 900px;
+  background: white;
+  padding: auto;
+  border-radius: 5px;
+}
 /* #btn
 {
   /* top: 40%;

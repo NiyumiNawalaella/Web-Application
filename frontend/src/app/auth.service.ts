@@ -13,12 +13,19 @@ export class AuthService {
 
   constructor(private webRequestService: WebRequestService) {}
 
-  createBooking(uname:string, uemail:string, uphonumber:string, facilities:string, startdateandtime:string, enddateandtime:string, no_of_participants:string, trainner: string, membershipno:string) {
+  createBookings(uname:string, uemail:string, uphonumber:string, facilities:string, startdateandtime:string, enddateandtime:string, no_of_participants:string, trainner: string, membershipno:string) {
       //sending a web request to create a booking
       return this.webRequestService.post('bookings',{uname,uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno});
      }
      getBookings() {
       return this.webRequestService.get('bookings');
+     }
+     createBooking(uname:string, uemail:string, uphonumber:string, facilities:string, startdateandtime:string, enddateandtime:string, no_of_participants:string, trainner: string, membershipno:string) {
+      //sending a web request to create a booking
+      return this.webRequestService.post('booking',{uname,uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno});
+     }
+     getBooking() {
+      return this.webRequestService.get('booking');
      }
 
   createTestimonial(email: string, comment: string) {
