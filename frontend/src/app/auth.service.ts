@@ -17,6 +17,10 @@ export class AuthService {
       //sending a web request to create a booking
       return this.webRequestService.post('bookings',{uname,uemail, uphonumber, facilities, startdateandtime, enddateandtime, no_of_participants, trainner, membershipno});
      }
+     deleteBookings(id:string)
+     {
+      return this.webRequestService.delete(`bookings/${id}`)
+     }
      getBookings() {
       return this.webRequestService.get('bookings');
      }

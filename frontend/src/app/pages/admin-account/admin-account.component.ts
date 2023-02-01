@@ -12,17 +12,27 @@ export class AdminAccountComponent implements OnInit {
 
   bookings: any;
   testimonials: any;
+
+  // selectedBookingsId: string;
   constructor(private authService: AuthService, private route: ActivatedRoute){
 
   }
 
   ngOnInit()
   {
-    this.route.params.subscribe(
-      (params: Params) => {
-        console.log(params);
-      }
-    )
+    // this.route.params.subscribe(
+    //   (params: Params) => {
+    //     // console.log(params);
+    //     if(params['bookingsId']) {
+    //       this.selectedBookingsId = params['bookingsId'];
+    //       this.authService.getBookings(params['bookingId']).subscribe((bookings: any) =>  {
+    //         this.bookings = bookings,
+    //       })
+    //     }else {
+    //       this.bookings = undefined;
+    //     }
+    //   }
+    // )
       this.authService.getBookings().subscribe((bookings:any) => {
       this.bookings = bookings;
     });
@@ -31,6 +41,12 @@ export class AdminAccountComponent implements OnInit {
     });
 
   }
+  // onDeleteBookingClick()
+  // {
+  //   this.authService.deleteBookings(this.selectedBookingsId).subscribe(() => {
+  //     console.log(res);
+  //   });
+  // }
 }
 
   // public loading = true;

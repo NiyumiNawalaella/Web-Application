@@ -64,8 +64,9 @@ export class WebReqInterceptor implements HttpInterceptor {
     return this.credentialsService.getNewAccessToken().pipe(
       //tap would just observe the response
       tap(() => {
-        this.refreshingAccessToken = false;
         console.log("Access Token Refreshed!");
+        this.refreshingAccessToken = false;
+        this.accessTokenRefreshed.next(null);
       })
     )
     }

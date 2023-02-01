@@ -92,7 +92,7 @@ td
  .update
 {
   margin-top: 10%;
-  margin-left: 80%;
+  margin-left: 60%;
   width: 100%;
   padding: 2rem;
   font-size: 2rem;
@@ -107,6 +107,28 @@ td
         hsla(187, 88%, 45%, 0.5) 100%);
 }
 .update
+{
+  color: white;
+  text-decoration: none;
+}
+.delete
+{
+  margin-top: 10%;
+  /* margin-left: 0%; */
+  width: 100%;
+  padding: 2rem;
+  font-size: 2rem;
+  border-radius: 40px;
+  background-color: transparent;
+}
+ .delete:hover
+{
+  background: linear-gradient(
+        45deg,
+        hsla(130, 85%, 52%, 0.5),
+        hsla(187, 88%, 45%, 0.5) 100%);
+}
+.delete
 {
   color: white;
   text-decoration: none;
