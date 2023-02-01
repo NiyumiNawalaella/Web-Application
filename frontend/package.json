@@ -38,9 +38,10 @@
     "lodash": "^4.17.21",
     "mongoose": "^6.8.4",
     "ngx-owl-carousel-o": "^15.0.0",
-    "rxjs": "~7.5.0",
+    "rxjs": "^6.6.7",
     "rxjs-compat": "^6.6.7",
     "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4",
     "tsconfig.json": "^1.0.11",
     "webpack": "^5.75.0",
     "zone.js": "~0.12.0"
